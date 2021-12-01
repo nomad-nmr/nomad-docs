@@ -21,3 +21,19 @@
   align-items: center;
   justify-content: center;
 }
+
+.legend {
+  display: flex;
+  justify-content: center;
+}
+
+.legend li {
+  margin: 0 50px;
+}
+
+.featureImplemented {
+  color: #389e0d;
+}
+.featurePlanned {
+  color: #c41d7f;
+}
