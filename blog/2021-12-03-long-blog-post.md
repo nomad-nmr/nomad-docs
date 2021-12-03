@@ -1,8 +1,8 @@
 ---
-slug: long-blog-post
-title: Long Blog Post
-authors: endi
-tags: [hello, docusaurus]
+slug: next-post
+title: Next Blog Post
+authors: [tomlebl]
+tags: [NOMAD]
 ---
 
 This is the summary of a very long blog post,

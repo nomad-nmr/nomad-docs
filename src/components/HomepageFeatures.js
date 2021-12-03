@@ -21,14 +21,16 @@ const FeatureList = [
     Svg: require('../../static/img/submit.svg').default,
     description: (
       <ul className={styles.featureList}>
-        <li className={styles.featureImplemented}>Improved centrally controlled NMR lab traffic</li>
+        <li className={styles.featureImplemented}>
+          Improved and centrally controlled NMR lab traffic
+        </li>
         <li className={styles.featureImplemented}>Batch/rack submission</li>
         <li className={styles.featureImplemented}>Correct provenance meta data assured</li>
       </ul>
     )
   },
   {
-    title: 'Data storage',
+    title: 'Data Storage',
     Svg: require('../../static/img/data-storage.svg').default,
     description: (
       <ul className={styles.featureList}>
