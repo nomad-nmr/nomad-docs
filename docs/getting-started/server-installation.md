@@ -69,7 +69,7 @@ SKIP_PREFLIGHT_CHECK=true
 PORT=3000
 
 #URL of the server running NOMAD back-end API
-REACT_APP_API_URL=http://nomad-server.ac.uk
+REACT_APP_API_URL=http://nomad.my-uni.ac.uk
 
 #Set true if corresponding NOMAD module is used
 #----------------------------------------------
@@ -192,7 +192,7 @@ For running the server over HTTPS, TLS enabled server block has to be used and t
     server {
         listen       443 ssl http2 default_server;
         listen       [::]:443 ssl http2 default_server;
-        server_name  nomad3.st-andrews.ac.uk;
+        server_name  nomad.my-uni.ac.uk;
         root         /usr/share/nginx/html;
 
         ssl_certificate /root/ssl/my-certificate.crt;
@@ -235,6 +235,15 @@ For running the server over HTTPS, TLS enabled server block has to be used and t
 }
 ```
 
+:::caution
+If you switch to HTTPS you need to set correct protocol prefix (https)
+
+- **REACT_APP_API_URL** (/nomad/nomad-front-end/config/production.env )
+- **FRONT_HOST_URL** (/nomad/ecosystem.config.js)
+- **[Client configuration - serverAddress](./client-installation.md/#config)**
+
+:::
+
 ## Starting the server
 
 ```bash
@@ -262,8 +271,8 @@ npm install
 npm run build
 ```
 
-:::caution
-If git pull command fails. Some changes were done in the working directory (very likely by npm install command).
+:::caution GIT PULL FAILS
+If git pull command fails very likely some changes were done in the working directory by npm install command.
 In that case, stash the changes and repeat pull.
 
 ```bash
