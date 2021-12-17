@@ -1,8 +1,8 @@
 ---
-sidebar_position: 6
+sidebar_position: 1
 ---
 
-# Decentralised Data Repository
+# Introduction
 
 :::info
 This section is still under construction

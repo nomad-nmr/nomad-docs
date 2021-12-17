@@ -60,7 +60,7 @@ npm run build
 NPM installation routine can throw list of various warnings that are for development purposes and don't necessarily mean that the code is broken.
 :::
 
-## Configuration files
+## Configuration files {#config-files}
 
 Following configuration files needs to be created.
 

@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# IcoNMR configuration
+# IcoNMR Configuration
 
 1. IconNMR has to be set in the way that IconNMR users correspond to research groups and individual users are tagged in using dataset names or originator items.
    :::note
@@ -20,7 +20,8 @@ sidebar_position: 4
 
    ![IconNMR automation priority](./assets/IconNMR_config_priority.png)
 
-4. For correct function of AUTO-FEED feature the dataset names must be generally in format XXX-XXX-username that could be for example created by following settings $NUMERICDATE-$HOLDER-username.
-   :::tip
-   If you would like to get started with AUTO-FEED and use dataset names in different format get in touch! Other formats including tagging users using originator items can be easily implemented.
+4. For correct function of **[Auto-feed](./NOMAD-config/#auto-feed)** feature the dataset names must be generally in format XXX-XXX-username that could be for example created by following settings $NUMERICDATE-$HOLDER-username.
+
+   :::tip Auto-feed with other data set name format
+   If you would like to get started with **[Auto-feed](./NOMAD-config/#auto-feed)** and use dataset names in different format get in touch! Other formats including tagging users using originator items can be easily implemented.
    :::
