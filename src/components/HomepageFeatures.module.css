@@ -9,3 +9,23 @@
   height: 200px;
   width: 200px;
 }
+
+.feature {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.featuresRow {
+  justify-content: center;
+}
+
+.featureList {
+  text-align: left;
+}
+
+.featureImplemented {
+  color: #389e0d;
+}
+.featurePlanned {
+  color: #c41d7f;
+}
