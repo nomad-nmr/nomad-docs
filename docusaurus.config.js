@@ -44,7 +44,7 @@ const config = {
       navbar: {
         title: 'NOMAD',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'NOMAD Logo',
           src: 'img/logo-round.png'
         },
         items: [
