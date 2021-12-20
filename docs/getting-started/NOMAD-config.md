@@ -15,7 +15,7 @@ If the spectrometer client is successfully connected. **_Connected_** traffic li
 
 ## Auto-feed {#auto-feed}
 
-If you have IconNMR set up to generate dataset name in generic format XXX-XXX-username (for example $NUMERICDATE-$HOLDER-username) you could start using **[monitoring dashboard](../../features/monitoring)** feature straight away. In order to do that you need to adjust two configuration files on the server and restart the application.
+If you have IconNMR set up to generate dataset name in generic format XXX-XXX-username (for example $NUMERICDATE-$HOLDER-username) you could start using **[monitoring dashboard](../features/monitoring)** feature straight away. In order to do that you need to adjust two configuration files on the server and restart the application.
 
 ```bash title=/nomad/ecosystem.config.js
 SUBMIT_ON: false
@@ -40,7 +40,7 @@ pm2 start ecosystem.config.js
 nginx
 ```
 
-If NOMAD runs in this **auto-feed** mode then group, username and parameter set tables get populated with data from your lab. Once you are happy with the snapshot of meta-data that auto-feed created you can switch the **[submission portal](../../features/submit)** on and start to use it after you have done two more things.
+If NOMAD runs in this **auto-feed** mode then group, username and parameter set tables get populated with data from your lab. Once you are happy with the snapshot of meta-data that auto-feed created you can switch the **[submission portal](../features/submit)** on and start to use it after you have done two more things.
 
 1. Enter default parameters (ns, d1, ds, td1, expt) in parameter set table that will allow to estimate experimental time essential for NOMAD traffic control.
 
