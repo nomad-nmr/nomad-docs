@@ -8,13 +8,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 const config = {
   title: 'NOMAD',
   tagline: 'Smart and complete solution for NMR laboratory data management',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://nomad-nmr.github.io',
+  baseUrl: '/website/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'nomad-nmr', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  projectName: 'website', // Usually your repo name.
 
   presets: [
     [
