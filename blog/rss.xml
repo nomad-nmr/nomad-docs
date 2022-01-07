@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>NOMAD Blog</title>
-        <link>https://nomad-nmr.github.io/blog</link>
+        <link>https://nomad-nmr.github.io/website/blog</link>
         <description>NOMAD Blog</description>
         <lastBuildDate>Thu, 06 Jan 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[NOMAD 3 - Third time lucky?]]></title>
-            <link>https://nomad-nmr.github.io/blog/welcome</link>
+            <link>https://nomad-nmr.github.io/website/blog/welcome</link>
             <guid>welcome</guid>
             <pubDate>Thu, 06 Jan 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[I plan to use this blog to announce new features, releases or just to post about my ideas for future development. Since this is my first post here I will try to explain little bit of the background of this project and outline where I would like to take it in near and also distant future.]]></description>

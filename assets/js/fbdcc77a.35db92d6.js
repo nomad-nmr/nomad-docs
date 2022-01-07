@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[331],{3681:function(e){e.exports=JSON.parse('{"allTagsPath":"/website/blog/tags","slug":"/website/blog/tags/background","name":"background","count":1,"permalink":"/website/blog/tags/background"}')}}]);
