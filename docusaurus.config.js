@@ -9,7 +9,7 @@ const config = {
   title: 'NOMAD',
   tagline: 'Smart and complete solution for NMR laboratory data management',
   url: 'https://nomad-nmr.github.io',
-  baseUrl: '/website/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
