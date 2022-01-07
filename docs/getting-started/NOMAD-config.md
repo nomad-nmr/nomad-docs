@@ -61,7 +61,7 @@ If you would like to get started with **auto-feed** and use dataset names in dif
 
 ## Manual configuration
 
-You can also get started with nomad by filling all necessary metadata tables manually.
+You can also get started with NOMAD by filling all necessary metadata tables manually.
 
 1. **Group table** - Group name has to match IconNMR username.
 2. **User table** - You need to enter correct e-mails otherwise password reset won't work.
