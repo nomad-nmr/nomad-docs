@@ -252,6 +252,16 @@ pm2 start ecosystem.config.js
 nginx
 ```
 
+:::tip START NOMAD-API AT SERVER STARTUP
+You can set PM2 to start at server startup
+
+```bash
+pm2 startup
+```
+
+See **[PM2 docs](https://pm2.keymetrics.io/docs/usage/startup/)** for more details.
+:::
+
 ## Stopping the server
 
 ```bash
