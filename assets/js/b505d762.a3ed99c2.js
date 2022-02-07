@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[395],{2384:function(e){e.exports=JSON.parse('{"allTagsPath":"/website/blog/tags","slug":"/website/blog/tags/video-tutorials","name":"video tutorials","count":1,"permalink":"/website/blog/tags/video-tutorials"}')}}]);
