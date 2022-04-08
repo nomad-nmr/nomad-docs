@@ -2,11 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nomad-nmr.github.io/website/blog</id>
     <title>NOMAD Blog</title>
-    <updated>2022-02-04T00:00:00.000Z</updated>
+    <updated>2022-04-07T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://nomad-nmr.github.io/website/blog"/>
     <subtitle>NOMAD Blog</subtitle>
     <icon>https://nomad-nmr.github.io/website/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[NMR data - from inception to visualisation]]></title>
+        <id>visualisation</id>
+        <link href="https://nomad-nmr.github.io/website/blog/visualisation"/>
+        <updated>2022-04-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[March was somewhat tough in many ways. So, it has been a while since I made a blog post. However, I have kept busy building NOMAD and made a decent progress with datastore function and NMRium integration.]]></summary>
+        <content type="html"><![CDATA[<p>March was somewhat tough in many ways. So, it has been a while since I made a blog post. However, I have kept busy building NOMAD and made a decent progress with datastore function and <strong><a href="https://www.nmrium.org/">NMRium</a></strong> integration.</p><p>It seems that I have got the core of datastore function finished. Obviously, there were couple of hurdles that slowed me down little bit but at the end the result looks good and the prototype has worked very well on few test samples that I have run myself. The last bug was actually quite interesting to see. All have worked fine while I was using the spectrometer client in my test environment but run on an instrument was failing. Eventually, I have noticed that the problem stems from incomplete NMR data set being archived. It turned out that parsing status file, sending it to the server, analysing it and sending archiving command back to the client is faster than processing 1D 1H spectrum. In my opinion, that clears any doubts about capability of web application built on MERN stack to handle NMR lab data traffic. Now it&#x27;s the time to get it under load of beta testing on the test server with one instrument and handful of beta testers.</p><p>Another important milestone is <strong><a href="https://www.nmrium.org/">NMRium</a></strong> integration. One of the ultimate goals of NOMAD to create a platform that would take NMR data from inception to publication. I have always struggled to explain this idea and how it facilitates NMR data preservation. I have got some new ideas about it that hopefully shade some more light on overall NOMAD pursuit. You can check that in the <strong><a href="../docs/intro#how-could-nomad-help-with-nmr-data-preservation">introduction section</a></strong>.
+As I mentioned last time, <strong><a href="https://www.nmrium.org/">NMRium</a></strong> is a huge game changer and helps NOMAD to make massive leap to a stage that I would call <strong><em>&quot;from inception to visualisation&quot;</em></strong> witch could be a milestone about half way through. In order to demonstrate what I have got so far I recorded another <strong><a href="../docs/video-tutorials">video tutorial</a></strong> showing current workflow from users perspective.</p>]]></content>
+        <author>
+            <name>Tomas Lebl</name>
+            <uri>https://github.com/tomlebl</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[On the way to datastore]]></title>
         <id>datastore</id>
