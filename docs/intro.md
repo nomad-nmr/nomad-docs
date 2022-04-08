@@ -16,7 +16,33 @@ sidebar_position: 1
 
 3. You care about long term preservation of NMR data and believe that an equivalent of **[CCDC](https://ccdc.cam.ac.uk/)** for NMR spectroscopy would be a tremendous resource.
 
----
+## How could NOMAD help with NMR data preservation?
+
+### Problem
+
+![NMR data problem](./assets/NMR-data-problem.png)
+
+- In large NMR facilities multiple NMR instruments automatically acquire and process NMR data that are uploaded on large shared network drive. The automation process is controlled by multiple instances of IconNMR software which makes difficult to associate NMR data with corresponding provenance metadata.
+
+- Users download data data on their personal computers where carry on with processing and analysing the NMR data. Eventually users create a report in MS Word or PDF format that they pass to supervisor or PI who usually don't have access to raw NMR data. At the end, PIs trigger publication process that could easily be many years after some NMR data were acquired. Since PIs don't have access to NMR data they rather avoid NMR data deposition or delegate the uneasy task of looking for needles in the hay stack to a co-worker.
+
+- If NMR data eventually gets deposited they end up in a centralized generic research data repositories such as **[Figshare](https://figshare.com/)** or **[Zenodo](https://zenodo.org/)** which don't provide any search tools and other facilities that would be useful for NMR spectroscopists.
+
+### Solution
+
+![NMR data solution](./assets/NMR-data-solution.png)
+
+- NOMAD spectrometer client connects individual instances of IconNMR with NOMAD server where **_Monitoring Dashboard_** and **_Submission Portal_** functions assure collection of correct provenance metadata.
+
+- The raw NMR data gets collated in **_NOMAD Datastore_** alongside with metadata which enables efficient searching.
+
+- **_NMR Lab Notebook_** with integrated **[NMRium](https://www.nmrium.org/)** enables further processing, analysing and annotating NMR data without downloading data on personal computers.
+
+- All users including PIs access the NOMAD platform with different access rights from they PCs via UI running in a web browser. In another words, there is no need for installation of any software on users' PCs.
+
+- Publication of raw NMR data is done by direct communication between NOMAD server and research data repository API. Hence no information is lost by downloading data to users' PCs.
+
+- The ultimate goal is to have multiple instances of NOMAD running in various NMR labs around the globe that share resources to form a decentralised P2P NMR data repository powered by **[IPFS](https://ipfs.io/)** protocol.
 
 ## What is NMR?
 
