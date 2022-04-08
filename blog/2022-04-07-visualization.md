@@ -1,11 +1,11 @@
 ---
-slug: visualisation
-title: NMR data - from inception to visualisation
+slug: visualization
+title: NMR data - from inception to visualization
 authors: [tomlebl]
 tags: [NOMAD, datastore, NMRium]
 ---
 
-March was somewhat tough in many ways. So, it has been a while since I made a blog post. However, I have kept busy building NOMAD as well and made a decent progress with datastore function and **[NMRium](https://www.nmrium.org/)** integration.
+March was somewhat tough in many ways. So, it has been a while since I made a blog post. However, I have kept busy building NOMAD and made a decent progress with datastore function and **[NMRium](https://www.nmrium.org/)** integration.
 
 <!--truncate-->
 
