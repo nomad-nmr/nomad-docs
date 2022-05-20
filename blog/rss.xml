@@ -4,9 +4,17 @@
         <title>NOMAD Blog</title>
         <link>https://nomad-nmr.github.io/website/blog</link>
         <description>NOMAD Blog</description>
-        <lastBuildDate>Thu, 07 Apr 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 19 May 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Datastore released (version 3.1.0)]]></title>
+            <link>https://nomad-nmr.github.io/website/blog/datastore-release</link>
+            <guid>datastore-release</guid>
+            <pubDate>Thu, 19 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[I have been swamped by quite few things right now. So, this is going to be only a very short post to mark another big milestone in NOMAD development.]]></description>
+            <content:encoded><![CDATA[<p>I have been swamped by quite few things right now. So, this is going to be only a very short post to mark another big milestone in NOMAD development.</p><p>We have been using NOMAD with datastore function on production server for over 2 weeks and successfully archived over 3000 experiments without any glitch. Datastore function now includes essential data search engine and data can be directly opened in <strong><a href="https://www.nmrium.org/">NMRium</a></strong>. Furthermore, results of NMR data analysis can be stored back in datastore in <strong><a href="https://www.nmrium.org/">NMRium</a></strong> format. All code currently running on our production server has been released on GitHub as version 3.1.0 and the documentation for <strong><a href="../website/docs/getting-started/server-installation">server</a></strong> and <strong><a href="../website/docs/getting-started/client-installation">spectrometer client</a></strong> installation has been updated.</p><p>Obviously, there is still a lot of work to build a system that would seamlessly take NMR data from inception to publication. However, the current state of development makes me think that this is just a question of time.</p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[NMR data - from inception to visualization]]></title>
             <link>https://nomad-nmr.github.io/website/blog/visualization</link>

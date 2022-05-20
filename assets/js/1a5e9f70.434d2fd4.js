@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[561],{9565:function(e){e.exports=JSON.parse('{"allTagsPath":"/website/blog/tags","slug":"/website/blog/tags/nomad","name":"NOMAD","count":3,"permalink":"/website/blog/tags/nomad"}')}}]);
