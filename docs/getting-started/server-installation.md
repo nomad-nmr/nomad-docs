@@ -29,6 +29,11 @@ Here is the list of resources that should be installed on the server before you 
   It's likely that Git has been already installed with your Linux distribution.
   :::
 
+## Recommended server configuration
+
+- 4 vCPUs (cores)
+- 8GB RAM
+
 ## NOMAD code installation
 
 Make installation folder using superuser privileges.
@@ -45,13 +50,21 @@ chmod 701 /nomad
 
 Clone NOMAD code repositories, install Javascript dependencies and create production build of the front-code.
 
+:::caution
+You need to create **[configuration files](server-installation.md/#config-files)** before you run _npm run build_
+:::
+
 ```bash
 cd /nomad
 git clone https://github.com/nomad-nmr/nomad-front-end.git
 git clone https://github.com/nomad-nmr/nomad-rest-api.git
+git clone https://github.com/nomad-nmr/nomad-nmrium.git
 cd /nomad/nomad-rest-api
 npm install
 cd /nomad/nomad-front-end
+npm install
+npm run build
+cd /nomad/nomad-nmrium
 npm install
 npm run build
 ```
@@ -68,20 +81,27 @@ Following configuration files needs to be created.
 SKIP_PREFLIGHT_CHECK=true
 PORT=3000
 
-#URL of the server running NOMAD back-end API
+#URL of the server running NOMAD back-end API and NMRium wrapper
 REACT_APP_API_URL=http://nomad.my-uni.ac.uk
-
+REACT_APP_NMRIUM_URL=http://nomad.my-uni.ac.uk/nmrium
 #Set true if corresponding NOMAD module is used
 #----------------------------------------------
 #Submission portal
 REACT_APP_SUBMIT_ON=true
 #Batch submission portal
 REACT_APP_BATCH_SUBMIT_ON=true
+#Datastore
+REACT_APP_DATASTORE_ON=true
 ```
 
 :::caution
 REACT_APP_API_URL has to be set correctly in accordance with your server domain name and protocol prefix (http/https)!
 :::
+
+```bash title=/nomad/nomad-nmrium/config/.env.production
+VITE_APP_API_URL=http://nomad.my-uni.ac.uk
+VITE_APP_NOMAD_URL=http://nomad.my-uni.ac.uk
+```
 
 ```javascript title=/nomad/ecosystem.config.js
 module.exports = {
@@ -118,8 +138,18 @@ module.exports = {
         SMTP_SENDER: 'nomad@my-uni.ac.uk',
 
         //Set to true if NOMAD submission portal is used
-        SUBMIT_ON: true
-        }
+        SUBMIT_ON: true,
+
+        //Set true if NOMAD datastore is used
+        DATASTORE_ON: true,
+        DATASTORE_PATH: '/nomad/store/data',
+
+        //timeout for upload data route connection [ms].
+        DATA_UPLOAD_TIMEOUT: 30000,
+
+        //If true NMRium file is generated upon Bruker zip file upload.
+        //That results in bigger volume of data in datastore but faster viewing of data in NMRium
+        PREPROCESS_NMRIUM: true
       }
     }
   ]
@@ -159,8 +189,15 @@ server {
                 try_files $uri /index.html =404;
         }
 
+        location /data/ {
+          proxy_read_timeout 30s;
+          proxy_connect_timeout 75s;
+          proxy_pass http://127.0.0.1:8080/data/;
+          client_max_body_size 200M;
+        }
+
         location /api/ {
-          proxy_pass http://localhost:8080/;
+          proxy_pass http://127.0.0.1:8080/;
        }
 
         location /socket.io/ {
@@ -169,8 +206,17 @@ server {
             proxy_set_header Upgrade $http_upgrade;
             proxy_set_header Connection "upgrade";
 
-           proxy_pass http://localhost:8080/socket.io/;
+           proxy_pass http://127.0.0.1:8080/socket.io/;
         }
+
+        location /nmrium {
+           autoindex on;
+           index index.html;
+
+           alias /nomad/nomad-nmrium/dist;
+
+           try_files $uri $uri/ /index.html;
+       }
 
         error_page 404 /404.html;
         location = /404.html {
@@ -205,14 +251,21 @@ For running the server over HTTPS, TLS enabled server block has to be used and t
         # Load configuration files for the default server block.
         include /etc/nginx/default.d/*.conf;
 
-         location / {
+        location / {
                 root /nomad/nomad-front-end/build;
                 try_files $uri /index.html =404;
         }
 
         location /api/ {
-          proxy_pass http://localhost:8080/;
+          proxy_pass http://127.0.0.1:8080/;
        }
+
+        location /data/ {
+          proxy_read_timeout 30s;
+          proxy_connect_timeout 75s;
+          proxy_pass http://127.0.0.1:8080/data/;
+          client_max_body_size 200M;
+        }
 
         location /socket.io/ {
             proxy_http_version 1.1;
@@ -220,8 +273,17 @@ For running the server over HTTPS, TLS enabled server block has to be used and t
             proxy_set_header Upgrade $http_upgrade;
             proxy_set_header Connection "upgrade";
 
-           proxy_pass http://localhost:8080/socket.io/;
+           proxy_pass http://127.0.0.1:8080/socket.io/;
         }
+
+         location /nmrium {
+           autoindex on;
+           index index.html;
+
+           alias /nomad/nomad-nmrium/dist;
+
+           try_files $uri $uri/ /index.html;
+       }
 
         error_page 404 /404.html;
         location = /404.html {
@@ -231,8 +293,6 @@ For running the server over HTTPS, TLS enabled server block has to be used and t
         location = /50x.html {
         }
     }
-
-}
 ```
 
 :::caution
@@ -240,6 +300,7 @@ If you switch to HTTPS you need to set correct protocol prefix (https)
 
 - **REACT_APP_API_URL** (/nomad/nomad-front-end/config/production.env )
 - **FRONT_HOST_URL** (/nomad/ecosystem.config.js)
+- **VITE_APP_API_URL** and **\*VITE_APP_NOMAD_URL** (/nomad/nomad-nmrium/config/.env.production)
 - **[Client configuration - serverAddress](./client-installation.md/#config)**
 
 :::
@@ -276,6 +337,10 @@ cd /nomad/nomad-rest-api
 git pull
 npm install
 cd /nomad/nomad-front-end
+git pull
+npm install
+npm run build
+cd /nomad/nomad-nmrium
 git pull
 npm install
 npm run build
