@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # System Overview
 
-NOMAD is a web application that has been programmed using **[Javascript MERN stack](https://www.educative.io/edpresso/what-is-mern-stack)**. The whole app is composed of three parts and corresponding code is stored in three individual GitHub repositories.
+NOMAD is a web application that has been programmed using **[Javascript MERN stack](https://www.educative.io/edpresso/what-is-mern-stack)**. The whole app is composed of four parts and corresponding code is stored in three individual GitHub repositories.
 
 :::tip
 If you are a Javascript developer familiar with MERN stack then likely there is nothing new for you in this section.
@@ -21,5 +21,9 @@ This repository contains back-end code of the NOMAD system built using **[Expres
 ## nomad-spect-client
 
 The spectrometer client is a Javascript code that runs on spectrometer PC in **[Node.js](https://nodejs.org/en/)** runtime environment and enables communication of NOMAD back-end with Bruker IconNMR. It parses status and history HTML file(s) and outputs files in external setup folder to control automated run of the NMR spectrometer.
+
+## nomad-nmrium
+
+Wrapper for **[NMRium](https://www.nmrium.org/)** React component that enables communication with nomad-rest-api.
 
 ![Technical Overview](./assets/technical_overview_schema.png)
