@@ -34,9 +34,9 @@ const FeatureList = [
     Svg: require('../../static/img/data-storage.svg').default,
     description: (
       <ul className={styles.featureList}>
-        <li className={styles.featurePlanned}>Automatic upload and storage of NMR datasets</li>
-        <li className={styles.featurePlanned}>Search datasets using various metadata</li>
-        <li className={styles.featurePlanned}>Data ownership and access control</li>
+        <li className={styles.featureImplemented}>Automatic upload and storage of NMR datasets</li>
+        <li className={styles.featureImplemented}>Search datasets using various metadata</li>
+        <li className={styles.featureImplemented}>Data ownership and access control</li>
       </ul>
     )
   },
@@ -46,7 +46,12 @@ const FeatureList = [
     description: (
       <ul className={styles.featureList}>
         <li className={styles.featurePlanned}>Selecting and reorganising data for publication</li>
-        <li className={styles.featurePlanned}>Viewing and processing data</li>
+        <li className={styles.featureImplemented}>
+          <a href='https://www.nmrium.org/' target='_blank'>
+            NMRium
+          </a>{' '}
+          embedded for viewing and processing data
+        </li>
         <li className={styles.featurePlanned}>
           Adding addtional metadata and data (molecular structures, assigments ...)
         </li>
