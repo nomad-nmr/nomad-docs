@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[2609],{3994:function(e){e.exports=JSON.parse('{"label":"datastore","permalink":"/website/blog/tags/datastore","allTagsPath":"/website/blog/tags","count":3}')}}]);
