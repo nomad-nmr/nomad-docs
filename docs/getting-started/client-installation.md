@@ -5,7 +5,7 @@ sidebar_position: 3
 # Spectrometer Client Installation
 
 :::tip Linux Console for Windows
-For installation on Windows machines, install **[Cmder](https://cmder.net/)** Linux console simulator. The full version comes with Git for Windows.
+For installation on Windows machines, install **[Cmder](https://cmder.app/)** Linux console simulator. The full version comes with Git for Windows.
 Using Cmder will make installation procedure on Windows and Linux machines nearly the same.
 :::
 
@@ -20,10 +20,17 @@ cd C: Bruker
 cd  /opt
 ```
 
-Clone the repository and install JS dependencies
+Download the latest release of the source code from **[Github](https://github.com/nomad-nmr/nomad-spect-client/releases)** and uncompress .zip or .tar archive
+
+You can also use git command to clone the repository
 
 ```bash
 git clone https://github.com/nomad-nmr/nomad-spect-client.git
+```
+
+Navigate to the folder with the source code and install JS dependencies
+
+```bash
 cd nomad-spect-client
 npm install
 ```
@@ -85,10 +92,18 @@ Then use Windows Task Scheduler as Administrator to execute the .bat file on Win
 
 ## Update client
 
-Stop the client by _Ctrl + C_ or Windows Task Scheduler
+Stop the client by _Ctrl + C_ or use Windows Task Scheduler
+
+If you installed the client using git clone command then
 
 ```bash
 git pull
+npm install
+```
+
+Otherwise download the newer release from **[Github](https://github.com/nomad-nmr/nomad-spect-client/releases)**, uncompress .zip or .tar archive to replace the folder with existing source code and install JS dependencies.
+
+```bash
 npm install
 ```
 
