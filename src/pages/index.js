@@ -31,7 +31,7 @@ function HomepageHeader(props) {
         <div className={styles.buttonsTwo}>
           <Link
             className='button button--secondary button--lg'
-            to='/docs/getting-started/system-overview/'
+            to='/docs/getting-started/client-installation/'
           >
             Get Started
           </Link>
