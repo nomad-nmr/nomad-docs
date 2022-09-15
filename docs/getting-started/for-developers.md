@@ -31,7 +31,7 @@ The spectrometer client is a Javascript code that runs on spectrometer PC in **[
 The whole code base is split between two repositories. The repository **[nomad-server](https://github.com/nomad-nmr/nomad-server)** is the server side code composed of three parts **nomad-front-end**, **nomad-nmrium** and **nomad-rest-api**. The spectrometer client has its own **[repository](https://github.com/nomad-nmr/nomad-spect-client)**.
 
 The **nomad-server** repository contains all necessary configuration files to get you started in **[Docker](https://www.docker.com/)** environment.
-You will need to install both docker engine and docker compose. The easiest way to achieve that is to install Docker Desktop available for all operating systems.
+You will need to install both docker engine and docker compose. The easiest way to achieve that is to install **[Docker Desktop](https://docs.docker.com/desktop/)** available for wide variety of Linux platforms, mcOS, Windows 10.
 
 Clone both **nomad-server** and **nomad-spect-client** repositories
 

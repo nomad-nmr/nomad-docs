@@ -4,366 +4,233 @@ sidebar_position: 2
 
 # Server Installation
 
-:::info
-The procedure provided here describes installation on Red Hat Enterprise Linux Server 7.9 as detailed as possible. Some steps can vary depending on your server operating system, infrastructure and networking. All this is work in progress and **[Docker](https://www.docker.com/)** technology, which should streamline installation procedure, shall be implemented in near future.
-:::
-
-## Server infrastructure dependencies
-
-Here is the list of resources that should be installed on the server before you proceed with NOMAD code installation.
-
-- **[Node.js](https://linuxize.com/post/how-to-install-node-js-on-centos-7/)**
-  :::tip
-  The latest LTS (long-term support) version should do the trick at the moment.
-  Using NVM (Node Version Manager) will allow easy upgrade in future if necessary.
-  :::
-- **[MongoDB](https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-centos-7)**
-
-- **[NginX](https://linuxize.com/post/how-to-install-nginx-on-centos-8/)**
-
-- **[PM2](https://pm2.keymetrics.io/)**
-
-- **[Git](https://www.tecmint.com/install-git-centos-fedora-redhat/)**
-  :::note
-  Git is not strictly a dependency but at this stage will help to get NOMAD code on your server.
-  It's likely that Git has been already installed with your Linux distribution.
-  :::
-
 ## Recommended server configuration
 
 - 4 vCPUs (cores)
 - 8GB RAM
 
-## NOMAD code installation
+## Server Infrastructure
 
-Make installation folder using superuser privileges.
+NOMAD has been developed to run on the server in **[Docker](https://www.docker.com/)** environment and therefore you will need to start by installing both Docker Engine and Docker Compose that are available on a wide variety of Linux platforms, mcOS, Windows 10. Here are the links to installation instructions on Linux from the command line.
 
-:::caution
-Nginx needs to have read permission to the files that should be served AND have execute permission in each of the parent directories along the path from the root to the served files.
-:::
+- **[Docker Engine installation guide](https://docs.docker.com/engine/install/)**
+- **[Docker Compose installation guide](https://docs.docker.com/compose/install/linux/)**
+
+To check whether Docker installation was successful use two following commands
+
+```bash
+docker -v
+docker-compose -v
+```
+
+## Docker Compose Configuration
+
+Using sudo privileges create installation folder and `docker-compose.yaml` configuration file
 
 ```bash
 sudo su
 mkdir /nomad
-chmod 701 /nomad
+nano /nomad/docker-compose.yaml
 ```
 
-Clone NOMAD code repositories, install Javascript dependencies and create production build of the front-code.
+```yaml title=/nomad/docker-compose.yaml
+version: '3.8'
+services:
+  mongodb:
+    image: 'mongo'
+    restart: always
+    volumes:
+      - mongo-data:/data/db
 
-:::caution
-You need to create **[configuration files](server-installation.md/#config-files)** before you run _npm run build_
+  api:
+    image: nomadnmr/api:production
+    env_file:
+      - ./backend.env
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./datastore:/app/datastore
+    restart: always
+    depends_on:
+      - mongodb
+
+  server:
+    image: nomadnmr/server:production
+    ports:
+      - '80:80'
+    restart: always
+    depends_on:
+      - backend
+
+volumes:
+  mongo-data:
+```
+
+:::warning
+The indents in yaml files have a purpose. Make sure that they remain unchanged otherwise the configuration file won't work.
 :::
+
+NOMAD system is composed of three service containers **mongodb**, **api** and **server**. The first container is based on official Docker image of Mongo Database, the other two are based on images that were built from the NOMAD source code stored in **[nomad-server](https://github.com/nomad-nmr/nomad-server)** repository. The example of the configuration file uses images with `production` tag that correspond to images currently used in production in St Andrews. If you want to use an image with specific version release then you need to change image entry accordingly. For example, following changes in docker-compose.yaml file would compose the system based on v3.2.0 release.
+
+```yaml
+api:
+  image: nomadnmr/api:v3.2.0
+```
+
+```yaml
+server:
+  image: nomadnmr/server:v3.2.0
+```
+
+Docker images are stored on **[Docker Hub](https://hub.docker.com/search?q=nomadnmr)** where you can check available tags.
+
+### Datastore folder configuration
+
+The NMR data should be archived on a dedicated resilient data storage volume.
+To get this working using the configuration file above the archiving volume must be mounted to `datastore` folder inside the nomad installation folder.
+If the archiving volume is mounted somewhere else then you need to define corresponding path in docker-compose.yaml file by editing the path before colon in api service volumes entry. Both relative and absolute paths work here. For example following change would make NOMAD to store data in `/mnt/datastore` folder.
+
+```yaml
+api:
+  ##
+  volumes:
+    - /mnt/datastore:/app/datastore
+```
+
+:::danger
+This configuration sets up HTTP server that will use insecure unencrypted connection with clients which is fine for testing but production server should use additional configuration settings for TLS encrypted communication as described in the following paragraph.
+:::
+
+### TLS Enabled server
+
+To enable TLS encryption for your server a different configuration of server Docker container in docker-compose.yaml file is needed. In nutshell, different server image server-tls has to be used, port needs to be set to 443 and folder with ssl certificates has to be mounted. In the following example we use production version of TLS server currently used in St Andrews and certificates are stored in `/root/ssl` folder.
+
+```yaml title=docker-compose.yaml
+server:
+  image: nomadnmr/server-tls:production
+  ports:
+    - 443:443
+  volumes:
+    - /root/ssl:/ssl
+  restart: always
+  depends_on:
+    - api
+```
+
+## Environmental variables
+
+Using sudo privileges create backend.env file with following example content.
 
 ```bash
-cd /nomad
-git clone https://github.com/nomad-nmr/nomad-front-end.git
-git clone https://github.com/nomad-nmr/nomad-rest-api.git
-git clone https://github.com/nomad-nmr/nomad-nmrium.git
-cd /nomad/nomad-rest-api
-npm install
-cd /nomad/nomad-front-end
-npm install
-npm run build
-cd /nomad/nomad-nmrium
-npm install
-npm run build
+sudo su
+nano /nomad/backend.env
 ```
 
-:::note
-NPM installation routine can throw list of various warnings that are for development purposes and don't necessarily mean that the code is broken.
+```js title=/nomad/backend.env
+PORT=8080
+MONGODB_URL='mongodb://mongodb:27017/nomad'
+HOST='0.0.0.0'
+#Frontend host url
+FRONT_HOST_URL='###'
+
+#Password for automatically generated admin user
+ADMIN_PASSWORD='###'
+
+#JWT expiration time in seconds
+JWT_EXPIRATION=3600
+
+#Secret word for generating JWT
+JWT_SECRET='###'
+
+EMAIL_SUFFIX='###'
+
+#SMTP configuration
+SMTP_HOST='###'
+SMTP_PORT=###
+SMTP_SECURE=###
+SMTP_REQUIRE_TLS=###
+SMTP_USER='###'
+SMTP_PASS='###'
+SMTP_SENDER='###'
+
+#Set true if NOMAD submission is used
+SUBMIT_ON=true
+
+#Set true if NOMAD datastore is used
+DATASTORE_ON=true,
+DATASTORE_PATH='/app/datastore'
+#timeout for upload data route connection
+DATA_UPLOAD_TIMEOUT=30000
+
+#If true NMRium file is genearted upon Bruker zip file upload.
+#That result bigger volume of data in datastore but faster viewing of data in NMRium
+PREPROCESS_NMRIUM=true
+```
+
+All entries with value ### need to be edited.
+
+- **FRONT_HOST_URL** : URL of the server hosting your system. For example: `http://nomad.my_domain.uk`
+- **ADMIN_PASSWORD** : A backdoor password of your choice that will enable you to login with username admin after system installation.
+- **JWT_SECRET** : Any random string of your choice that will be used to secure communication of the server with clients.
+- **EMAIL_SUFFIX** : Email suffix that will be used to auto-generate e-mail addresses from usernames. For example: `my_domain.uk`
+- **SMTP configuration**
+  - **SMTP_HOST** : URL of SMTP server that will be used to send e-mails. For example: `mailhost.my_domain.uk`
+  - **SMTP_PORT** : Port on SMTP server that will receive the request. For SSL/TLS 587 or 2525. [More info](https://www.sparkpost.com/blog/what-smtp-port/)
+  - **SMTP_SECURE** : false or true depending on SMTP server set up
+  - **SMTP_REQUIRE_TLS** : false or true depending on SMTP server set up. Related to SMTP_PORT setting.
+  - **SMTP_USER** : Username for SMTP server authentication. Use empty string `''` if authentication is not required.
+  - **SMTP_PASS** : Password for SMTP server authentication. Use empty string `''` if authentication is not required.
+  - **SMTP_SENDER** : An email address that will be used as sender for NOMAD system e-mails. For example `nomad@my_domain.uk`
+
+:::danger
+All the other environmental variables should remain unchanged. They are used for expert setups used in development environment etc.
 :::
 
-## Configuration files {#config-files}
+## Start/Stop the server
 
-Following configuration files needs to be created.
+After you have set up docker-compose.yaml and backend.env configuration files, you can simply start and stop the server by using following commands.
 
-```bash title=/nomad/nomad-front-end/config/production.env
-SKIP_PREFLIGHT_CHECK=true
-PORT=3000
-
-#URL of the server running NOMAD back-end API and NMRium wrapper
-REACT_APP_API_URL=http://nomad.my-uni.ac.uk
-REACT_APP_NMRIUM_URL=http://nomad.my-uni.ac.uk/nmrium
-#Set true if corresponding NOMAD module is used
-#----------------------------------------------
-#Submission portal
-REACT_APP_SUBMIT_ON=true
-#Batch submission portal
-REACT_APP_BATCH_SUBMIT_ON=true
-#Datastore
-REACT_APP_DATASTORE_ON=true
+```bash
+sudo docker-compose up -d
+sudo docker-compose down
 ```
 
 :::caution
-REACT_APP_API_URL has to be set correctly in accordance with your server domain name and protocol prefix (http/https)!
+For the commands to work, you need to be in the folder with docker-compose.yaml file.
 :::
 
-```bash title=/nomad/nomad-nmrium/config/.env.production
-VITE_APP_API_URL=http://nomad.my-uni.ac.uk
-VITE_APP_NOMAD_URL=http://nomad.my-uni.ac.uk
+You can use the following command to check running containers.
+
+```bash
+sudo docker ps
 ```
 
-```javascript title=/nomad/ecosystem.config.js
-module.exports = {
-  apps: [
-    {
-      name: 'nomad-api',
-      script: './nomad-rest-api/app.js',
-      watch: '.',
-      env: {
-        PORT: 8080,
-        NODE_ENV: 'production',
-        MONGODB_URL: 'mongodb://127.0.0.1:27017/nomad',
-        FRONT_HOST_URL: 'http://nomad.my-uni.ac.uk',
+You should see three running containers with following names **nomad-mongodb-1**, **nomad-api-1** and **nomad-server-1**.
 
-        //Password for automatically generated admin user
-        ADMIN_PASSWORD: 'MySuperSecretBackDoorPasswd',
+:::info
 
-        // JWT expiration time in seconds
-        //After this time user automatically logs off
-        JWT_EXPIRATION: 3600,
+- Container names will be slightly different if the folder with docker-compose.yaml file has other name than nomad.
+- If the containers are running when VM gets rebooted the containers will automatically restart.
 
-        //Secret word for generating JWT
-        JWT_SECRET: 'SecretWord',
+:::
 
-        EMAIL_SUFFIX: 'my-uni.ac.uk',
+## Database dumps
 
-        //SMTP configuration
-        SMTP_HOST: 'mailhost.my-uni.ac.uk',
-        SMTP_PORT: 25,
-        SMTP_SECURE: false,
-        SMTP_REQUIRE_TLS: true,
-        SMTP_USER: '',
-        SMTP_PASS: '',
-        SMTP_SENDER: 'nomad@my-uni.ac.uk',
+**To dump database**
 
-        //Set to true if NOMAD submission portal is used
-        SUBMIT_ON: true,
+```bash
+docker exec -i nomad-mongodb-1 sh -c 'mongodump --archive' > mongodb.dump
+```
 
-        //Set true if NOMAD datastore is used
-        DATASTORE_ON: true,
-        DATASTORE_PATH: '/nomad/store/data',
+**To restore from dump**
 
-        //timeout for upload data route connection [ms].
-        DATA_UPLOAD_TIMEOUT: 30000,
-
-        //If true NMRium file is generated upon Bruker zip file upload.
-        //That results in bigger volume of data in datastore but faster viewing of data in NMRium
-        PREPROCESS_NMRIUM: true
-      }
-    }
-  ]
-}
+```bash
+docker exec -i nomad-mongodb-1 sh -c 'mongorestore --archive --drop' < mongodb.dump
 ```
 
 :::tip
-You can create default ecosystem.config.js file by command
 
-```bash
-pm2 ecosystem
-```
+- if the commands don't work use `docker ps` command to check actual name of your mongodb container which might differ from the one (nomad-mongodb-1) used in above example.
+- Create a cron command to periodically archive mongodb.dump in the datastore volume or other secure place. The database dump and nomad docker images will allow you to resurrect the system on a new VM after a catastrophic event.
 
-:::
-
-:::caution
-Pay attention to setting FRONT_HOST_URL and SMTP configuration. These entries are the most crucial for correct operation of the system.
-Very likely, you will need to request access to SMTP server run by IT services of your organisation.
-:::
-
-## NGINX configuration
-
-### Configuration for HTTP
-
-```bash {10-13,15-17,19-26} title=/etc/nginx/nginx.conf
-server {
-        listen       	80 default_server;
-        listen       	[::]:80 default_server;
-        server_name  nomad.my-uni.ac.uk;
-        root         /usr/share/nginx/html;
-
-        # Load configuration files for the default server block.
-        include /etc/nginx/default.d/*.conf;
-
-        location / {
-                root /nomad/nomad-front-end/build;
-                try_files $uri /index.html =404;
-        }
-
-        location /data/ {
-          proxy_read_timeout 30s;
-          proxy_connect_timeout 75s;
-          proxy_pass http://127.0.0.1:8080/data/;
-          client_max_body_size 200M;
-        }
-
-        location /api/ {
-          proxy_pass http://127.0.0.1:8080/;
-       }
-
-        location /socket.io/ {
-            proxy_http_version 1.1;
-
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection "upgrade";
-
-           proxy_pass http://127.0.0.1:8080/socket.io/;
-        }
-
-        location /nmrium {
-           autoindex on;
-           index index.html;
-
-           alias /nomad/nomad-nmrium/dist;
-
-           try_files $uri $uri/ /index.html;
-       }
-
-        error_page 404 /404.html;
-        location = /404.html {
-        }
-
-        error_page 500 502 503 504 /50x.html;
-        location = /50x.html {
-        }
-}
-```
-
-### Configuration for HTTPS
-
-For running the server over HTTPS, TLS enabled server block has to be used and the default HTTP server block commented out. The three location blocks (/, /api/ and /socket.io) highlighted above need to be copied over and ssl_certificate and ssl_certificate_key have to be added. IT services in your organisation should be able to assist you to get the certificates.
-
-```bash {9-10,19-22,24-26,28-35} title=/etc/nginx/nginx.conf
-# Settings for a TLS enabled server.
-
-    server {
-        listen       443 ssl http2 default_server;
-        listen       [::]:443 ssl http2 default_server;
-        server_name  nomad.my-uni.ac.uk;
-        root         /usr/share/nginx/html;
-
-        ssl_certificate /root/ssl/my-certificate.crt;
-        ssl_certificate_key /root/ssl/my-certificate.key;
-        ssl_session_cache shared:SSL:1m;
-        ssl_session_timeout  10m;
-        ssl_ciphers HIGH:!aNULL:!MD5;
-        ssl_prefer_server_ciphers on;
-
-        # Load configuration files for the default server block.
-        include /etc/nginx/default.d/*.conf;
-
-        location / {
-                root /nomad/nomad-front-end/build;
-                try_files $uri /index.html =404;
-        }
-
-        location /api/ {
-          proxy_pass http://127.0.0.1:8080/;
-       }
-
-        location /data/ {
-          proxy_read_timeout 30s;
-          proxy_connect_timeout 75s;
-          proxy_pass http://127.0.0.1:8080/data/;
-          client_max_body_size 200M;
-        }
-
-        location /socket.io/ {
-            proxy_http_version 1.1;
-
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection "upgrade";
-
-           proxy_pass http://127.0.0.1:8080/socket.io/;
-        }
-
-         location /nmrium {
-           autoindex on;
-           index index.html;
-
-           alias /nomad/nomad-nmrium/dist;
-
-           try_files $uri $uri/ /index.html;
-       }
-
-        error_page 404 /404.html;
-        location = /404.html {
-        }
-
-        error_page 500 502 503 504 /50x.html;
-        location = /50x.html {
-        }
-    }
-```
-
-:::caution
-If you switch to HTTPS you need to set correct protocol prefix (https)
-
-- **REACT_APP_API_URL** (/nomad/nomad-front-end/config/production.env )
-- **FRONT_HOST_URL** (/nomad/ecosystem.config.js)
-- **VITE_APP_API_URL** and **\*VITE_APP_NOMAD_URL** (/nomad/nomad-nmrium/config/.env.production)
-- **[Client configuration - serverAddress](./client-installation.md/#config)**
-
-:::
-
-## Starting the server
-
-```bash
-cd /nomad
-pm2 start ecosystem.config.js
-nginx
-```
-
-:::tip START NOMAD-API AT SERVER STARTUP
-You can set PM2 to start at server startup
-
-```bash
-pm2 startup
-```
-
-See **[PM2 docs](https://pm2.keymetrics.io/docs/usage/startup/)** for more details.
-:::
-
-## Stopping the server
-
-```bash
-nginx -s quit
-pm2 stop all
-```
-
-## Updating NOMAD code
-
-```bash
-cd /nomad/nomad-rest-api
-git pull
-npm install
-cd /nomad/nomad-front-end
-git pull
-npm install
-npm run build
-cd /nomad/nomad-nmrium
-git pull
-npm install
-npm run build
-```
-
-:::caution GIT PULL FAILS
-If git pull command fails very likely some changes were done in the working directory by npm install command.
-In that case, stash the changes and repeat pull.
-
-```bash
-git stash
-git pull
-```
-
-:::
-
-## Database backup & restore
-
-```bash
-mongodump --db nomad --out /nomad/db-backup/
-mongorestore –db nomad /nomad/db-backup
-```
-
-:::tip
-Periodically create and backup db-backup folder on a different machine to improve resilience of your NOMAD system.
 :::

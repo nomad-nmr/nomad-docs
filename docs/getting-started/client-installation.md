@@ -9,20 +9,20 @@ For installation on Windows machines, install **[Cmder](https://cmder.app/)** Li
 Using Cmder will make installation procedure on Windows and Linux machines nearly the same.
 :::
 
-The only dependency that you will need to install is **[node.js](https://nodejs.org/en/)** For Windows machines, download and run Windows installer. For Linux machine, you can just repeat what was done on the server.
+The only dependency that you will need to install is **[node.js](https://nodejs.org/en/)**. Installers are available for Windows 10 as well as wide variety of Linux platforms including CentOS used by Bruker on their Linux workstations.
 
-Navigate to the folder where you want to install client for example:
+After you have installed **[node.js](https://nodejs.org/en/)**, navigate to the folder where you want to install the client. For example:
 
 ```bash
 ## Windows
-cd C: Bruker
+cd C:\Bruker
 ## Linux
 cd  /opt
 ```
 
 Download the latest release of the source code from **[Github](https://github.com/nomad-nmr/nomad-spect-client/releases)** and uncompress .zip or .tar archive
 
-You can also use git command to clone the repository
+You can also use git command to clone the repository.
 
 ```bash
 git clone https://github.com/nomad-nmr/nomad-spect-client.git
@@ -67,6 +67,10 @@ At the end you should see something like this.
 _Ctrl + C_ to exit client configuration.
 :::caution
 The relative paths defined here need to match those set in **[IconNMR configuration](./IconNMR-configuration/)**.
+:::
+
+:::info
+NOMAD client archives copies of datasets stored in folder defined by **nmrDataPath** variable in the client configuration. Therefore, NOMAD client won't interfere with your existing set up for NMR data archiving and you can run both systems in parallel.
 :::
 
 ## Start client

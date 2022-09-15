@@ -28,3 +28,13 @@
 .Uni img {
   height: 100px;
 }
+
+.Icons {
+  text-align: center;
+  font-weight: 300;
+  padding-bottom: 10px;
+}
+
+.Icons a {
+  margin: 0 10px;
+}
