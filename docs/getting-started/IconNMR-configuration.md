@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # IcoNMR Configuration
@@ -19,9 +19,3 @@ sidebar_position: 4
 3. If you want to use Day/Night and Priority features of NOMAD traffic control. You have to enable those in _IconNMR configuration/Automation/Priority_ and use other settings according to your needs.
 
    ![IconNMR automation priority](./assets/IconNMR_config_priority.png)
-
-4. For correct function of **[Auto-feed](./NOMAD-config/#auto-feed)** feature the dataset names must be generally in format XXX-XXX-username that could be for example created by following settings $NUMERICDATE-$HOLDER-username.
-
-   :::tip Auto-feed with other data set name format
-   If you would like to get started with **[Auto-feed](./NOMAD-config/#auto-feed)** and use dataset names in different format get in touch! Other formats including tagging users using originator items can be easily implemented.
-   :::

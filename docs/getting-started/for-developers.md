@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # For Developers
@@ -68,7 +68,7 @@ SMTP_PASS=''
 SMTP_SENDER=''
 ```
 
-To connect the spectrometer client, you need to login using admin username and the backdoor password that was set up in environmental variables and add an instrument into database. More information can be found on [NOMAD configuration](NOMAD-config). Then you need to enter instrument ID in client.env file and restart the Docker containers.
+To connect the spectrometer client, you need to login using admin username and the backdoor password that was set up in environmental variables and add an instrument into database. More information can be found on [Tips & Tricks](./tips.md). Then you need to enter instrument ID in client.env file and restart the Docker containers.
 
 To start NOMAD you need to navigate to nomad-server folder and run
 

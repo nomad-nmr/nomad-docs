@@ -30,10 +30,7 @@ function HomepageHeader(props) {
         </h2>
         <p className='hero__subtitle'>{siteConfig.tagline}</p>
         <div className={styles.buttonsTwo}>
-          <Link
-            className='button button--secondary button--lg'
-            to='/docs/getting-started/client-installation/'
-          >
+          <Link className='button button--secondary button--lg' to='/docs/getting-started/tips/'>
             Get Started
           </Link>
           <button

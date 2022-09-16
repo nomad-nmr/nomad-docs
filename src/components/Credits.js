@@ -67,7 +67,7 @@ const credits = () => {
         <a href='https://www.flaticon.com/' title='Flaticon'>
           www.flaticon.com
         </a>
-        | Website build with
+        | Website built with
         <a href='https://docusaurus.io/' title='Docusaurus'>
           Docusaurus
         </a>

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 # Server Installation
@@ -117,7 +117,7 @@ server:
     - api
 ```
 
-## Environmental variables
+## Environmental variables {#env-variables}
 
 Using sudo privileges create backend.env file with following example content.
 
@@ -213,6 +213,10 @@ You should see three running containers with following names **nomad-mongodb-1**
 - If the containers are running when VM gets rebooted the containers will automatically restart.
 
 :::
+
+## Updating the server
+
+- If you use version specific tags (e.g. `:v3.2.0`) then you need to stop the service, change the tag in docker-compose.yaml file and then start the service again.
 
 ## Database dumps
 

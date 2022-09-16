@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Spectrometer Client Installation
@@ -9,7 +9,7 @@ For installation on Windows machines, install **[Cmder](https://cmder.app/)** Li
 Using Cmder will make installation procedure on Windows and Linux machines nearly the same.
 :::
 
-The only dependency that you will need to install is **[node.js](https://nodejs.org/en/)**. Installers are available for Windows 10 as well as wide variety of Linux platforms including CentOS used by Bruker on their Linux workstations.
+The only dependency that you will need to install is **[node.js](https://nodejs.org/en/)**. Installers are available for Windows 10 as well as wide variety of Linux platforms including CentOS used by Bruker on their Linux workstations. Any feedback from attempts to install NOMAD client on an older machines are welcome.
 
 After you have installed **[node.js](https://nodejs.org/en/)**, navigate to the folder where you want to install the client. For example:
 
