@@ -37,7 +37,7 @@ If you can see **[NOMAD demo server](http://demo.nomad-nmr.uk/)** from your spec
 
   ![Book Job](./assets/Book_job.png)
 
-- You should be redirect back to dashboard and the request been processed by server you will see a green `Success!` message. Then you need to wait for a moment until IconNMR picks the job up. Once that happens, you shall see a dot at the yellow icon in the top menu.
+- You should be redirect back to dashboard and if the request has been processed by the server you will see a green `Success!` message. Then you need to wait for a moment until IconNMR picks the job up. Once that happens, you shall see a dot at the yellow icon in the top menu.
 
   ![Pending Experiment](./assets/Pending_exp.png)
 
@@ -57,7 +57,7 @@ Don't hesitate to ask your IT to help you with **[NOMAD server installation](./s
 
 ## 3) Get on with some real users
 
-Once you have your own server and established connection with NOMAD client on one of your spectrometers you should already be familiar with NOMAD basics. Then start with a handful users on one instrument. You can either add those users, groups and parameter sets in the database as you did while playing with the client and start to use submission portal straight away or let users to submit experiments through IconNMR and use **Auto-feed** function.
+Once you have your own server and established connection with NOMAD client on one of your spectrometers you should already be familiar with NOMAD basics. Then start with a handful of users on one instrument. You can either add those users, groups and parameter sets in the database as you did while playing with the client and start to use submission portal straight away or let users to submit experiments through IconNMR and use **Auto-feed** function.
 
 ### Auto-feed {#auto-feed}
 
