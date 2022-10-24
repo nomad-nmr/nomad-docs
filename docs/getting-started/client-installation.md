@@ -56,7 +56,7 @@ You will need to fill in following entries
 - **statusPath**: Relative path to IconNMR status.html file. _(./status_files/status.html)_
 - **historyPath**: Relative path to IconNMR history.html file. Keep it same as **statusPath** if both IconNMR status and history are written in the same file. Recommended. _(./status_files/status.html)_
 - **serverAddress**: URL of your NOMAD server _(https://nomad.my-uni.ac.uk)_
-- **submissionPath**: Relative path to IconNMR external set up folder. _(./submit_files)_
+- **submissionPath**: Relative path to IconNMR external set up folder. _(./submit_files/)_
 - **nmrDataPath**: Absolute path to IconNMR data folder. _(c:\Bruker\Topspin\data)_
 - **uploadDelay**: Delay for data upload [ms]. _(10000) If set to short data upload can be triggered before Topspin is finished with processing._
 
