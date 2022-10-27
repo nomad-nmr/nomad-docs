@@ -19,3 +19,12 @@ sidebar_position: 3
 3. If you want to use Day/Night and Priority features of NOMAD traffic control. You have to enable those in _IconNMR configuration/Automation/Priority_ and use other settings according to your needs.
 
    ![IconNMR automation priority](./assets/IconNMR_config_priority.png)
+
+   :::danger
+   For submitting samples to IconNMR through the external setup directory, the IconNMR automation window has to be open by user with "Supervisor" permissions. In the case of standard TopSpin/IconNMR installation you could use _nmrsu_ user.
+
+   ![IconNMR automation priority](./assets/IconNMR_automation_window.png)
+
+   Alternatively, it can be any other user with "Supervisor" permissions that you have created.
+
+   :::

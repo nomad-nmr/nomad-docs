@@ -11,7 +11,7 @@ const FeatureList = [
         <li className={styles.featureImplemented}>IconNMR status and history in one place</li>
         <li className={styles.featureImplemented}>Permanent and searchable IconNMR history</li>
         <li className={styles.featureImplemented}>Central database of users and experiments</li>
-        <li className={styles.featurePlanned}>Experimental time accounting</li>
+        <li className={styles.featureImplemented}>Experimental time accounting</li>
         <li className={styles.featurePlanned}>Cryogen levels</li>
       </ul>
     )
