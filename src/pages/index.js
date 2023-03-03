@@ -4,7 +4,9 @@ import Layout from '@theme/Layout'
 import Link from '@docusaurus/Link'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import styles from './index.module.css'
+
 import HomepageFeatures from '../components/HomepageFeatures'
+import Subscribe from '../components/Subscribe'
 import Logo from '../components/Logo'
 import Title from '../components/Title'
 import Credits from '../components/Credits'
@@ -51,17 +53,21 @@ export default function Home() {
   const [showModal, setShowModal] = useState(false)
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description='Description will go into a meta tag in <head />'
+      title={`${siteConfig.title} - Documentation`}
+      description='NOMAD - NMR Online Management And Datastore - Documentation website'
     >
       <HomepageHeader toggleModal={setShowModal} />
       <main>
         <HomepageFeatures />
+
         <ul className={styles.legend}>
           Legend:
           <li className={styles.featureImplemented}>Implemented feature</li>
           <li className={styles.featurePlanned}>Feature on the road map</li>
         </ul>
+
+        <Subscribe />
+
         <Credits />
       </main>
       {showModal && (

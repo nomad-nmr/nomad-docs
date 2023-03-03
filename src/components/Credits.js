@@ -9,6 +9,7 @@ import nginxLogo from '../../static/img/nginx.png'
 import dockerLogo from '../../static/img/docker-logo.png'
 import gitHubLogo from '../../static/img/GitHub-logo.png'
 import uniLogo from '../../static/img/uni-logo.png'
+import nmriumLogo from '../../static/img/nmrium.png'
 import classes from './Credits.module.css'
 
 const credits = () => {
@@ -42,6 +43,9 @@ const credits = () => {
         </a>
         <a href='https://github.com/nomad-nmr'>
           <img src={gitHubLogo} alt='GitHub Logo' />
+        </a>
+        <a href='https://www.nmrium.org/'>
+          <img src={nmriumLogo} alt='NMRium Logo' />
         </a>
       </div>
       <div className={`${classes.Row} ${classes.Uni}`}>

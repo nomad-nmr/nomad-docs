@@ -6,15 +6,11 @@ sidebar_position: 6
 
 ## System overview
 
-NOMAD is a web application that has been built using **[Javascript MERN stack](https://www.educative.io/edpresso/what-is-mern-stack)**. The whole app is composed of four main parts.
+NOMAD is a web application that has been built using **[Javascript MERN stack](https://www.educative.io/edpresso/what-is-mern-stack)**. The whole app is composed of three main components.
 
 ### nomad-front-end
 
 This part of the system works as graphical user interface of the main part of the system. It is a single page application (SPA) that was built using **[REACT JS library](https://reactjs.org/)**. The compiled production build is served by a webserver (**[NGINX](https://www.nginx.com/)**) as static content web site, runs in web browser on user's computer and communicates with the application back-end via standard Internet communication protocols (HTTP/HTTPS).
-
-### nomad-nmrium
-
-It is also SPA that servers as a wrapper for **[NMRium](https://www.nmrium.org/)** React component that enables communication between nomad-rest-api and NMRium.
 
 ### nomad-rest-api
 
@@ -99,3 +95,21 @@ docker exec -i nomad-server_mongodb_1 sh -c 'mongorestore --archive --drop' < mo
 ---
 
 More useful info about developing in a Docker Container can be found [here](https://code.visualstudio.com/docs/remote/containers).
+
+### Automatic testing
+
+Automatic testing is currently work in progress. So far, there is setup for integration tests of backend api using **[SuperTest](https://www.npmjs.com/package/supertest)** and **[Vitest](https://vitest.dev/)**.
+
+To perform a single run without watch mode
+
+```bash
+cd nomad-rest-api
+npm run test-once
+```
+
+You can also run test in watch mode or run it with coverage analysis by using following commands, respectively.
+
+```bash
+npm test
+npm run coverage
+```
