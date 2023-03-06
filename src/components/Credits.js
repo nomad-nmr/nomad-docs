@@ -10,6 +10,8 @@ import dockerLogo from '../../static/img/docker-logo.png'
 import gitHubLogo from '../../static/img/GitHub-logo.png'
 import uniLogo from '../../static/img/uni-logo.png'
 import nmriumLogo from '../../static/img/nmrium.png'
+import viteLogo from '../../static/img/vite-icon.png'
+
 import classes from './Credits.module.css'
 
 const credits = () => {
@@ -22,6 +24,12 @@ const credits = () => {
         </a>
         <a href='https://ant.design/'>
           <img src={antdLogo} alt='Ant Design Logo' />
+        </a>
+        <a href='https://vitejs.dev/'>
+          <img src={viteLogo} alt='Ant Design Logo' />
+        </a>
+        <a href='https://www.nmrium.org/'>
+          <img src={nmriumLogo} alt='NMRium Logo' />
         </a>
         <a href='https://redux.js.org/'>
           <img src={reduxLogo} alt='Redux Logo' />
@@ -43,9 +51,6 @@ const credits = () => {
         </a>
         <a href='https://github.com/nomad-nmr'>
           <img src={gitHubLogo} alt='GitHub Logo' />
-        </a>
-        <a href='https://www.nmrium.org/'>
-          <img src={nmriumLogo} alt='NMRium Logo' />
         </a>
       </div>
       <div className={`${classes.Row} ${classes.Uni}`}>
