@@ -10,7 +10,7 @@ Yes, you can. NOMAD will pick and archive datasets with a name in generic format
 
 ### Can we trial NOMAD without installing our own server?
 
-Yes, we can grant you admin access to our **[demo server](http://demo.nomad-nmr.uk/)** and connect your instrument to get some hands on experience and try few things out. More detailed instructions can be found **[here](./getting-started/tips.md)**.
+Yes, we can grant you admin access to our **[demo server](http://demo.nomad-nmr.uk/)** and then you can connect your instrument to get some hands on experience and try few things out. More detailed instructions can be found **[here](./getting-started/tips.md)**.
 
 ### Is it possible to install NOMAD server without Docker?
 
