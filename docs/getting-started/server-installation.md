@@ -60,7 +60,7 @@ services:
       - '80:80'
     restart: always
     depends_on:
-      - backend
+      - api
 
 volumes:
   mongo-data:
