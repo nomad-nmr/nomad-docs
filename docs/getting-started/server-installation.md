@@ -103,7 +103,7 @@ This configuration sets up HTTP server that will use insecure unencrypted connec
 
 ### TLS Enabled server
 
-To enable TLS encryption for your server a different configuration of server Docker container in docker-compose.yaml file is needed. In nutshell, different server image server-tls has to be used, port needs to be set to 443 and folder with ssl certificates has to be mounted. In the following example we use production version of TLS server currently used in St Andrews and certificates are stored in `/root/ssl` folder.
+To enable TLS encryption for your server a different configuration of server Docker container in docker-compose.yaml file is required. In nutshell, different server image server-tls has to be used, port needs to be set to 443 and folder with ssl certificates has to be mounted. If the following configuration is used in docker-compose.yaml file then certificate and key have to be saved as `/root/ssl/nomad3.pem` and `/root/ssl/nomad3.key`, respectively.
 
 ```yaml title=docker-compose.yaml
 server:
