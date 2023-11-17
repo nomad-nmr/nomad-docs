@@ -45,17 +45,19 @@ const FeatureList = [
     Svg: require('../../static/img/notebook.svg').default,
     description: (
       <ul className={styles.featureList}>
-        <li className={styles.featurePlanned}>Selecting and reorganising data for publication</li>
+        <li className={styles.featureImplemented}>
+          Selecting and reorganising data for publication
+        </li>
         <li className={styles.featureImplemented}>
           <a href='https://www.nmrium.org/' target='_blank'>
             NMRium
           </a>{' '}
           embedded for viewing and processing data
         </li>
-        <li className={styles.featurePlanned}>
+        <li className={styles.featureImplemented}>
           Adding addtional metadata and data (molecular structures, assigments ...)
         </li>
-        <li className={styles.featurePlanned}>Sharing data with other users</li>
+        <li className={styles.featureImplemented}>Sharing data with other users</li>
       </ul>
     )
   },
