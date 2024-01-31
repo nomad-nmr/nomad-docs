@@ -170,6 +170,24 @@ All entries with value ### need to be edited.
 
 - **FRONT_HOST_URL** : URL of the server hosting your system. For example: `http://nomad.my_domain.uk`
 - **ADMIN_PASSWORD** : A backdoor password of your choice that will enable you to login with username admin after system installation.
+  :::caution
+  The user admin with the password set in environmental variables is only created at server startup with no users in the database. If the user admin has already been created changing ADMIN_PASSWORD in environmental variables will not change the password in the database.  
+  In order to reset the user admin password you can start the server with an empty database by following commands:
+
+  ```bash
+  sudo docker exec -it mongodb-container-name mongosh
+  ```
+
+  You need to use the actual name of mongodb container that you can find by `docker ps` command.
+
+  ```mongosh
+  use nomad
+  db.dropDatabase()
+  ```
+
+  _CTRL+C_ to exit mongosh and then **[stop and start](#start-stop)** the server.
+  :::
+
 - **JWT_SECRET** : Any random string of your choice that will be used to secure communication of the server with clients.
 - **EMAIL_SUFFIX** : Email suffix that will be used to auto-generate e-mail addresses from usernames. For example: `my_domain.uk`
 - **SMTP configuration**
@@ -185,7 +203,7 @@ All entries with value ### need to be edited.
 All the other environmental variables should remain unchanged. They are used for expert setups used in development environment etc.
 :::
 
-## Start/Stop the server
+## Start/Stop the server {#start-stop}
 
 After you have set up docker-compose.yaml and backend.env configuration files, you can simply start and stop the server by using following commands.
 
