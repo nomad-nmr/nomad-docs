@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Spectrometer Client Installation
@@ -44,7 +44,8 @@ mkdir submit_files
 
 ## Client Configuration {#config}
 
-Execute configuration script
+Before you start with client configuration, you need to create at least one instrument in NOMAD database to get instrument ID.
+Then execute configuration script
 
 ```bash
 npm run config
@@ -57,8 +58,8 @@ You will need to fill in following entries
 - **historyPath**: Relative path to IconNMR history.html file. Keep it same as **statusPath** if both IconNMR status and history are written in the same file. Recommended. _(./status_files/status.html)_
 - **serverAddress**: URL of your NOMAD server _(https://nomad.my-uni.ac.uk)_
 - **submissionPath**: Relative path to IconNMR external set up folder. _(./submit_files/)_
-- **nmrDataPathAuto**: Absolute path to IconNMR data folder. _(c:\Bruker\Topspin\data-auto)_
-- **nmrDataPathManual**: Absolute path to manual data folder. _(c:\Bruker\Topspin\data-manual)_
+- **nmrDataPathAuto**: Absolute path to IconNMR data folder. _(c:\Data-icon\data\\)_
+- **nmrDataPathManual**: Absolute path to manual data folder. _(c:\Data-manual\data\\)_
 - **uploadDelay**: Delay for data upload [ms]. _(10000) If set to short data upload can be triggered before Topspin is finished with processing._
 
 At the end you should see something like this.

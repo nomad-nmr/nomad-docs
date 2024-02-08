@@ -1,20 +1,23 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 # IcoNMR Configuration
 
-1. IconNMR has to be set in the way that IconNMR users correspond to research groups and individual users are tagged in using dataset names or originator items.
-   :::note
-   Set up with each individual user being registered as IconNMR user is not supported and probably will never be because that would disable some key features of NOMAD.
-   :::
+1. After fresh installation of the server there is one user in database (username: admin , group: default). To get started, you need to create IconNMR user _default_ and set "Data Directories" to a directory of your choice. For example _C:\Data-Icon_
+
+   ![Data folder setup](./assets/icon-data-folder-setup.PNG)
+
+   If you create more groups in NOMAD database later (see **[Tips & Tricks](./tips)**). For each new group, you have to create a new IconNMR user with a corresponding name and the same data directory.
+   Alternatively, if your IconNMR users corresponds to your research groups, you need to set up groups in NOMAD database with matching group names and then set spectrometer client variable _nmrDataPathAuto_ accordingly (see **[NOMAD spectrometer client configuration](./client-installation/#config)**)
+
 2. Set paths to status/history html files and external setup directory in _IconNMR configuration/Automation/Automation Window_
 
-   ![IconNMR automation priority](./assets/IconNMR_config.png)
+![IconNMR automation priority](./assets/IconNMR_config.png)
 
-   :::caution
-   The paths here are absolute and need to match corresponding relative paths that are set in **[NOMAD spectrometer client configuration](./client-installation/#config)**.
-   :::
+:::caution
+The paths here are absolute and need to match corresponding relative paths that are set in **[NOMAD spectrometer client configuration](./client-installation/#config)**.
+:::
 
 3. If you want to use Day/Night and Priority features of NOMAD traffic control. You have to enable those in _IconNMR configuration/Automation/Priority_ and use other settings according to your needs.
 

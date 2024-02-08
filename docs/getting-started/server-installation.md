@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 1
 ---
 
 # Server Installation
@@ -234,6 +234,15 @@ You should see three running containers with following names **nomad-mongodb-1**
 ## Updating the server
 
 - If you use version specific tags (e.g. `:v3.2.0`) then you need to stop the service, change the tag in docker-compose.yaml file and then start the service again.
+
+- If you are using `:production` tag (version currently running on production server in St Andrews) and want to update to a newer version then you need to remove the images that you currently have on your server and then pull the new ones from Docker-Hub.
+
+```bash
+docker-compose down
+docker rmi nomadnmr/server-tls:production nomadnmr/api:production
+docker-compose pull
+docker-compose up -d
+```
 
 ## Database dumps
 
