@@ -19,8 +19,8 @@ NOMAD has been developed to run on the server in **[Docker](https://www.docker.c
 To check whether Docker installation was successful use two following commands
 
 ```bash
-docker -v
-docker-compose -v
+sudo docker -v
+sudo docker compose -v
 ```
 
 ## Docker Compose Configuration
@@ -208,8 +208,8 @@ All the other environmental variables should remain unchanged. They are used for
 After you have set up docker-compose.yaml and backend.env configuration files, you can simply start and stop the server by using following commands.
 
 ```bash
-sudo docker-compose up -d
-sudo docker-compose down
+sudo docker compose up -d
+sudo docker compose down
 ```
 
 :::caution
@@ -238,10 +238,10 @@ You should see three running containers with following names **nomad-mongodb-1**
 - If you are using `:production` tag (version currently running on production server in St Andrews) and want to update to a newer version then you need to remove the images that you currently have on your server and then pull the new ones from Docker-Hub.
 
 ```bash
-docker-compose down
-docker rmi nomadnmr/server-tls:production nomadnmr/api:production
-docker-compose pull
-docker-compose up -d
+sudo docker compose down
+sudo docker rmi nomadnmr/server-tls:production nomadnmr/api:production
+sudo docker compose pull
+sudo docker compose up -d
 ```
 
 ## Database dumps
@@ -249,13 +249,13 @@ docker-compose up -d
 **To dump database**
 
 ```bash
-docker exec -i nomad-mongodb-1 sh -c 'mongodump --archive' > mongodb.dump
+sudo docker exec -i nomad-mongodb-1 sh -c 'mongodump --archive' > mongodb.dump
 ```
 
 **To restore from dump**
 
 ```bash
-docker exec -i nomad-mongodb-1 sh -c 'mongorestore --archive --drop' < mongodb.dump
+sudo docker exec -i nomad-mongodb-1 sh -c 'mongorestore --archive --drop' < mongodb.dump
 ```
 
 :::tip
