@@ -5,7 +5,7 @@ authors: [tomlebl]
 tags: [NOMAD, collections]
 ---
 
-We're thrilled to announce the release of NOMAD System Version 3.5.0, a significant milestone in our journey toward revolutionizing NMR data management. With this new version, we introduce the highly anticipated feature of collections which complements the pursuit of refactoring of all features from Version 2 into entirely new codebase.
+We're thrilled to announce the release of NOMAD System Version 3.5.0, a significant milestone in our journey toward revolutionizing NMR data management. With this new version, we introduce the highly anticipated feature of collections which was the last feature on the list to complete the pursuit of refactoring Version 2 into entirely new codebase.
 
 <!--truncate-->
 
