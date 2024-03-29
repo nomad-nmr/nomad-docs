@@ -159,11 +159,11 @@ SUBMIT_ON=true
 #Set true if NOMAD datastore is used
 DATASTORE_ON=true,
 DATASTORE_PATH='/app/datastore'
+DOWNLOADS_PATH='/app/downloads'
+
 #timeout for upload data route connection
 DATA_UPLOAD_TIMEOUT=30000
-
-#If true NMRium file is generated upon Bruker zip file upload.
-PREPROCESS_NMRIUM=false
+COLLECTION_DOWNLOAD_TIMEOUT=900000
 ```
 
 All entries with value ### need to be edited.
