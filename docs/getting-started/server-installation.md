@@ -50,6 +50,7 @@ services:
       - '8080:8080'
     volumes:
       - ./datastore:/app/datastore
+      - ./downloads:/app/downloads
     restart: always
     depends_on:
       - mongodb
@@ -57,7 +58,9 @@ services:
   server:
     image: nomadnmr/server:production
     ports:
-      - '80:80'
+      - 80:80
+    volumes:
+      - ./downloads:/app/downloads
     restart: always
     depends_on:
       - api
