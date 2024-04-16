@@ -115,6 +115,7 @@ server:
     - 443:443
   volumes:
     - /root/ssl:/ssl
+    - ./downloads:/app/downloads
   restart: always
   depends_on:
     - api
