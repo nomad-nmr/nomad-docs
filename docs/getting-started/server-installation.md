@@ -121,6 +121,10 @@ server:
     - api
 ```
 
+:::caution
+The certificate has to be in full chain format otherwise the client won't be able to connect to the server.
+:::
+
 ## Environmental variables {#env-variables}
 
 Using sudo privileges create backend.env file with following example content.
