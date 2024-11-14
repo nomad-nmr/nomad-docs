@@ -138,6 +138,8 @@ nano /nomad/backend.env
 PORT=8080
 MONGODB_URL='mongodb://mongodb:27017/nomad'
 HOST='0.0.0.0'
+NODE_ENV='production'
+
 #Frontend host url
 FRONT_HOST_URL='###'
 
