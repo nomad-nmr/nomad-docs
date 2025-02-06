@@ -170,10 +170,6 @@ SUBMIT_ON=true
 DATASTORE_ON=true,
 DATASTORE_PATH='/app/datastore'
 DOWNLOADS_PATH='/app/downloads'
-
-#timeout for upload data route connection
-DATA_UPLOAD_TIMEOUT=30000
-COLLECTION_DOWNLOAD_TIMEOUT=900000
 ```
 
 All entries with value ### need to be edited.
@@ -208,6 +204,16 @@ All entries with value ### need to be edited.
   - **SMTP_USER** : Username for SMTP server authentication. Use empty string `''` if authentication is not required.
   - **SMTP_PASS** : Password for SMTP server authentication. Use empty string `''` if authentication is not required.
   - **SMTP_SENDER** : An email address that will be used as sender for NOMAD system e-mails. For example `nomad@my_domain.uk`
+
+### Optional variables
+
+Any of the following variables can be added to overwrite default hard coded value.
+
+- **DATA_UPLOAD_TIMEOUT** : connection timeout for data upload route in ms, default value 30000
+- **COLLECTION_DOWNLOAD_TIMEOUT** : time in ms that collection download link is valid for, default value 900000
+- **SEND_EMAIL_ERROR** : initial boolean value in user profile settings for sending error status emails, default value true
+- **SEND_EMAIL_ARChIVED** : initial boolean value in user profile settings for sending archived status emails, default value true
+- **PENDING_EMAIL_DELAY** : delay in minutes for sending pending status emails, default value 30
 
 :::danger
 All the other environmental variables should remain unchanged. They are used for expert setups used in development environment etc.

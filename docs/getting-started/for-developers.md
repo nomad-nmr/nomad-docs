@@ -129,3 +129,11 @@ You can also run test in watch mode or run it with coverage analysis by using fo
 npm test
 npm run coverage
 ```
+
+## API Documentation
+
+Version 2 API endpoints have been documented using **[Swagger.io](https://swagger.io/)** .
+Documentation Swagger UI is accessible on any NOMAD server at the route `/api/api-docs`. You can check it on our **[NOMAD demo server](https://demo.nomad-nmr.uk/api/api-docs)**
+
+Currently, only handful of endpoints, that could be used by a programmatic client to search and access archived data, has been refactored to version 2 and documented.
+Please get in touch if you want to add more or adjust the existing ones.
