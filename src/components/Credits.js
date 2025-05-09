@@ -1,4 +1,6 @@
 import React from 'react'
+import Link from '@docusaurus/Link'
+
 import reactLogo from '../../static/img/react-logo.png'
 import antdLogo from '../../static/img/antd-logo.png'
 import reduxLogo from '../../static/img/redux-logo.png'
@@ -11,12 +13,33 @@ import gitHubLogo from '../../static/img/GitHub-logo.png'
 import uniLogo from '../../static/img/uni-logo.png'
 import nmriumLogo from '../../static/img/nmrium.png'
 import viteLogo from '../../static/img/vite-icon.png'
+import manchesterLogo from '../../static/img/manchester-logo.png'
+import uclLogo from '../../static/img/ucl-logo.png'
+import imperialLogo from '../../static/img/imperial-logo.png'
 
 import classes from './Credits.module.css'
 
 const credits = () => {
   return (
     <div className={classes.Container}>
+      <div className={`${classes.Row} ${classes.Uni}`}>
+        <span className={classes.Text}>Developed at</span>
+        <Link to='https://nmr.wp.st-andrews.ac.uk'>
+          <img src={uniLogo} alt='Uni Logo' height='100px' />
+        </Link>
+        <span className={classes.Text} style={{ marginLeft: '100px' }}>
+          Collaborations
+        </span>
+        <Link to='https://nmrservice.ch.man.ac.uk/nmrservice/'>
+          <img src={manchesterLogo} alt='Manchester Logo' style={{ width: '65%', height: '65%' }} />
+        </Link>
+        <Link to='https://www.ucl.ac.uk/pharmacy/about/facilities/research-services/school-pharmacy-nuclear-magnetic-resonance-facility/'>
+          <img src={uclLogo} alt='UCL Logo' style={{ width: '45%', height: '45%' }} />
+        </Link>
+        <Link to='https://www.imperial.ac.uk/chemistry/research/facilities/nmr/'>
+          <img src={imperialLogo} alt='Imperial Logo' style={{ width: '55%', height: '55%' }} />
+        </Link>
+      </div>
       <div className={`${classes.Row} ${classes.Powered}`}>
         <span className={classes.Text}>Powered by</span>
         <a href='https://reactjs.org/'>
@@ -53,12 +76,7 @@ const credits = () => {
           <img src={gitHubLogo} alt='GitHub Logo' />
         </a>
       </div>
-      <div className={`${classes.Row} ${classes.Uni}`}>
-        <span className={classes.Text}>Developed at</span>
-        <a href='https://www.st-andrews.ac.uk'>
-          <img src={uniLogo} alt='Uni Logo' />
-        </a>
-      </div>
+
       <div className={classes.Icons}>
         Icons made by
         <a href='https://www.freepik.com' title='Freepik'>

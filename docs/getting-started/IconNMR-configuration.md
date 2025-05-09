@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# IcoNMR Configuration
+# IconNMR Configuration
 
 1. After fresh installation of the server there is one user in database (username: admin , group: default). To get started, you need to create IconNMR user _default_ and set "Data Directories" to a directory of your choice. For example _C:\Data-Icon_
 
