@@ -2,59 +2,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 300px;
+  padding: 10px 300px;
   background-color: #40a9ff;
   text-align: center;
 }
 
 .SubscribeContainer h1 {
-  margin-bottom: 10px;
+  padding-top: 10px;
   color: #002c8c;
-}
-
-.SubscribeContainer p {
-  margin: 0;
-  font-weight: 500;
-  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .SubscribeContainer img {
-  width: 150px;
-  margin: 0 50px;
-}
-
-.SubscribeForm {
-  padding-bottom: 20px;
-}
-
-.SubscribeForm input {
-  padding: 10px;
-  width: 350px;
-  border-radius: 6px;
-  border: none;
-  margin-right: 20px;
-  font-size: large;
-  background-color: #e6f4ff;
-}
-
-.SubscribeForm input:hover {
-  border: solid 2px #002c8c;
-}
-
-.SubscribeForm button {
-  color: #002c8c;
-  font-size: 18px;
-  font-weight: bold;
-  border: 0px;
-  border-radius: 6px;
-  padding: 10px 20px;
-  background-color: #ebedf0;
-  margin-top: 20px;
-}
-
-.SubscribeForm button:hover,
-.SubscribeForm button:focus {
-  text-decoration: none;
-  cursor: pointer;
-  background-color: #888;
+  margin-left: 25px;
+  margin-top: 5px;
 }

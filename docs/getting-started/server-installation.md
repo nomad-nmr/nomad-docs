@@ -135,9 +135,6 @@ nano /nomad/backend.env
 ```
 
 ```js title=/nomad/backend.env
-PORT=8080
-MONGODB_URL='mongodb://mongodb:27017/nomad'
-HOST='0.0.0.0'
 NODE_ENV='production'
 
 #Frontend host url
@@ -145,9 +142,6 @@ FRONT_HOST_URL='###'
 
 #Password for automatically generated admin user
 ADMIN_PASSWORD='###'
-
-#JWT expiration time in seconds
-JWT_EXPIRATION=3600
 
 #Secret word for generating JWT
 JWT_SECRET='###'
@@ -162,10 +156,6 @@ SMTP_REQUIRE_TLS=###
 SMTP_USER='###'
 SMTP_PASS='###'
 SMTP_SENDER='###'
-
-#Filesystem paths
-DATASTORE_PATH='/app/datastore'
-DOWNLOADS_PATH='/app/downloads'
 ```
 
 All entries with value ### need to be edited.
@@ -203,20 +193,26 @@ All entries with value ### need to be edited.
 
 ### Optional variables
 
-Any of the following variables can be added to overwrite default hard coded value.
+From version 3.6.0 onwards, any of the following variables can be added to overwrite default value and customise your server. For older versions, optional variables have to be defined in `backend.env` file and set to the default values.
 
-- **DATA_UPLOAD_TIMEOUT** : connection timeout for data upload route in seconds, default value 30
-- **COLLECTION_DOWNLOAD_TIMEOUT** : time in minutes that collection download link is valid for, default value 30
-- **SEND_EMAIL_ERROR** : initial boolean value in user profile settings for sending error status emails, default value true
-- **SEND_EMAIL_ARCHIVED** : initial boolean value in user profile settings for sending archived status emails, default value true
-- **PENDING_EMAIL_DELAY** : delay in minutes for sending pending status emails, default value 30
-- **SUBMIT_ON** : default value is true, if the values is set false it will set NOMAD to run in monitoring mode without submit function
-- **DATASTORE_ON** : default value is true, if the values is set false it will set NOMAD archiving function will be disabled.
 - **CUSTOM_SOLVENTS**: Adds custom solvents into the solvent list. The value must be a string with solvent names comma separated. For example `'DMSO_weak,C6D6_capillary'` will add two solvents DMSO_weak and C6D6_capillary.
+- **SEND_EMAIL_ERROR** : initial boolean value in user profile settings for sending error status emails, default value `true`
+- **SEND_EMAIL_ARCHIVED** : initial boolean value in user profile settings for sending archived status emails, default value `true`
+- **JWT_EXPIRATION** : JWT expiration time in seconds, after this time users get automatically logged out, default value `3600`
+- **COLLECTION_DOWNLOAD_TIMEOUT** : time in minutes that collection download link is valid for, default value `30`
+- **PENDING_EMAIL_DELAY** : delay in minutes for sending pending status emails, default value `30`
 
-:::danger
-All the other environmental variables should remain unchanged. They are used for expert setups used in development environment etc.
-:::
+Following optional variables can be used to set up NOMAD to run in unusual environments and should be used with caution.
+
+- **PORT** : REST API port, default value `8080`
+- **MONGODB_URL** : database URL, default value `'mongodb://mongodb:27017/nomad'.`
+- **HOST** : can be used to set express API server to listen on a specific network, default value `'0.0.0.0'` - the server accepts connection from any network.
+- **DATA_UPLOAD_TIMEOUT** : connection timeout for data upload route in seconds, default value `30`
+- **SUBMIT_ON** : default value is `true`, if the value is set `false` it will set NOMAD to run in monitoring mode using auto-feed without submit function.
+- **DATASTORE_ON** : default value is `true`, if the values is set `false`, NOMAD archiving function will be disabled.
+- **DATASTORE_PATH** : datastore file system path, default value `'/app/datastore'`
+- **DOWNLOADS_PATH** : collection downloads file system path, default value `'/app/downloads'`
+- **AUTO-FEED_ON** : if the values is set `true`, it will switch on **[Auto-feed](./tips.md/#auto-feed)** function that will archive experiments that have not been submitted through NOMAD. It will only work if IconNMR generates dataset name in a generic format XXX-XXX-username.
 
 ## Start/Stop the server {#start-stop}
 
@@ -250,7 +246,7 @@ You should see three running containers with following names **nomad-mongodb-1**
 
 - If you use version specific tags (e.g. `:v3.2.0`) then you need to stop the service, change the tag in docker-compose.yaml file and then start the service again.
 
-- If you are using `:production` tag (version currently running on production server in St Andrews) and want to update to a newer version then you need to remove the images that you currently have on your server and then pull the new ones from Docker-Hub.
+- `:production` tag is the version currently running on production server in St Andrews and should not be used without consulting with developers. To update to a newer version of a production image, you need to remove the images that you currently have on your server and then pull the new ones from Docker-Hub.
 
 ```bash
 sudo docker compose down
