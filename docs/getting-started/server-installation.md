@@ -163,11 +163,7 @@ SMTP_USER='###'
 SMTP_PASS='###'
 SMTP_SENDER='###'
 
-#Set true if NOMAD submission is used
-SUBMIT_ON=true
-
-#Set true if NOMAD datastore is used
-DATASTORE_ON=true,
+#Filesystem paths
 DATASTORE_PATH='/app/datastore'
 DOWNLOADS_PATH='/app/downloads'
 ```
@@ -209,11 +205,14 @@ All entries with value ### need to be edited.
 
 Any of the following variables can be added to overwrite default hard coded value.
 
-- **DATA_UPLOAD_TIMEOUT** : connection timeout for data upload route in ms, default value 30000
-- **COLLECTION_DOWNLOAD_TIMEOUT** : time in ms that collection download link is valid for, default value 900000
+- **DATA_UPLOAD_TIMEOUT** : connection timeout for data upload route in seconds, default value 30
+- **COLLECTION_DOWNLOAD_TIMEOUT** : time in minutes that collection download link is valid for, default value 30
 - **SEND_EMAIL_ERROR** : initial boolean value in user profile settings for sending error status emails, default value true
-- **SEND_EMAIL_ARChIVED** : initial boolean value in user profile settings for sending archived status emails, default value true
+- **SEND_EMAIL_ARCHIVED** : initial boolean value in user profile settings for sending archived status emails, default value true
 - **PENDING_EMAIL_DELAY** : delay in minutes for sending pending status emails, default value 30
+- **SUBMIT_ON** : default value is true, if the values is set false it will set NOMAD to run in monitoring mode without submit function
+- **DATASTORE_ON** : default value is true, if the values is set false it will set NOMAD archiving function will be disabled.
+- **CUSTOM_SOLVENTS**: Adds custom solvents into the solvent list. The value must be a string with solvent names comma separated. For example `'DMSO_weak,C6D6_capillary'` will add two solvents DMSO_weak and C6D6_capillary.
 
 :::danger
 All the other environmental variables should remain unchanged. They are used for expert setups used in development environment etc.
