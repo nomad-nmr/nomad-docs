@@ -10,6 +10,7 @@ import Subscribe from '../components/Subscribe'
 import Logo from '../components/Logo'
 import Title from '../components/Title'
 import Credits from '../components/Credits'
+import TestimonialsCarousel from '../components/TestimonialsCarousel'
 
 function HomepageHeader(props) {
   const { siteConfig } = useDocusaurusContext()
@@ -68,6 +69,7 @@ export default function Home() {
           <li className={styles.featureImplemented}>Implemented feature</li>
           <li className={styles.featurePlanned}>Feature on the road map</li>
         </ul>
+        <TestimonialsCarousel />
 
         <Subscribe />
 
