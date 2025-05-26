@@ -1,0 +1,46 @@
+.testimonialsCarousel {
+  margin: 2rem auto;
+  max-width: 800px;
+  background: #f9f9f9;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.testimonialsCarousel blockquote {
+  font-size: 1.2rem;
+  margin: 0 0 1rem 0;
+  color: #333;
+}
+.testimonialsCarousel footer {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+.carouselButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.carouselButtons button {
+  background: #eee;
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.carouselButtons button:hover {
+  background: #ddd;
+}
+
+.container {
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: #303846;
+  text-align: center;
+  margin-bottom: auto;
+}
