@@ -16,6 +16,10 @@ const testimonials = [
     quote:
       'My opinion is that NOMAD will make a massive difference to the way we can access, review and monitor the generation of this crucial data. ',
     author: 'Prof. James Bull, Imperial College London'
+  },
+  {
+    quote: `NOMAD is an exceptionally useful platform that continues to develop under Dr Lebl's excellent guidance. In my view it is an essential part of managing any research project that involves NMR data.`,
+    author: 'Prof. Nicholas Westwood, University of St Andrews'
   }
 ]
 
