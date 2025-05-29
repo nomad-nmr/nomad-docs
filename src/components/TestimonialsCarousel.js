@@ -20,6 +20,10 @@ const testimonials = [
   {
     quote: `NOMAD is an exceptionally useful platform that continues to develop under Dr Lebl's excellent guidance. In my view it is an essential part of managing any research project that involves NMR data.`,
     author: 'Prof. Nicholas Westwood, University of St Andrews'
+  },
+  {
+    quote: `We use NOMAD with approximately 300 undergraduates users. NOMAD allows efficient submission and processing of NMR data. The datastore features are also very valuable for teaching staff to monitor progress and assist students.`,
+    author: 'Dr. Iain Smellie, University of St Andrews'
   }
 ]
 
