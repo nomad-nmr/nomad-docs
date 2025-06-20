@@ -24,6 +24,10 @@ const testimonials = [
   {
     quote: `We use NOMAD with approximately 300 undergraduates users. NOMAD allows efficient submission and processing of NMR data. The datastore features are also very valuable for teaching staff to monitor progress and assist students.`,
     author: 'Dr. Iain Smellie, University of St Andrews'
+  },
+  {
+    quote: `This NOMAD thing is genuinely incredible!`,
+    author: 'Dr Pratik Gurnani, University College London'
   }
 ]
 
