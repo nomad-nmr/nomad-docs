@@ -11,7 +11,7 @@ const Subscribe = () => {
       <a href='mailto:nomad@st-andrews.ac.uk'>
         <img src={emailIcon} alt='Email Icon' width='40' />
       </a>
-      <a href='https://discord.gg/vKMs6ujF'>
+      <a href='https://discord.gg/YxwFuCJeJ9'>
         <img src={discordLogo} alt='Discord Logo' />
       </a>
     </div>
