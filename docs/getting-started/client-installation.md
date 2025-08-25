@@ -96,6 +96,56 @@ npm start
 
 Then use Windows Task Scheduler as Administrator to execute the .bat file on Windows startup.
 
+### Running client as a service on Linux
+
+On Linux computers, you can run the spectrometer client as a service that can be configured to start automatically on reboot.
+
+Create file `/etc/systemd/system/nomad-client.service`
+
+```
+[Unit]
+Description=Nomad Client
+
+[Service]
+ExecStart=/home/nmrsu/bin/nomad-client
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Create file `/home/nmrsu/bin/nomad-client`
+
+```
+#!/usr/bin/env bash
+
+npm run verbose --prefix /opt/nomad-spect-client/
+```
+
+:::note
+`/opt/nomad-spect-client/` is the default installation folder for spectrometer client.
+If you have installed the client in a different folder, amend the corresponding path above accordingly.
+:::
+
+You can start stop and view status of the service using the following commands, respectively.
+
+```
+sudo systemctl start nomad-client
+sudo systemctl stop nomad-client
+sudo systemctl status nomad-client
+```
+
+To configure nomad-client service to run when the system reboots
+
+```
+sudo systemctl enable nomad-client
+```
+
+To view nomad-client logs, you can run
+
+```
+sudo journalctl -u nomad-client
+```
+
 ## Update client
 
 Stop the client by _Ctrl + C_ or use Windows Task Scheduler
