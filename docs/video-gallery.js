@@ -8,8 +8,8 @@ export function Gallery({ links, titles }) {
           <div className='col margin-top--lg margin-bottom--lg'>
             <h3>{titles[idx]}</h3>
             <iframe
-              width='640'
-              height='360'
+              width='800'
+              height='450'
               src={link}
               frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
