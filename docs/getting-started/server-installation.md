@@ -212,7 +212,7 @@ Following optional variables can be used to set up NOMAD to run in unusual envir
 - **DATASTORE_ON** : default value is `true`, if the values is set `false`, NOMAD archiving function will be disabled.
 - **DATASTORE_PATH** : datastore file system path, default value `'/app/datastore'`
 - **DOWNLOADS_PATH** : collection downloads file system path, default value `'/app/downloads'`
-- **AUTO-FEED_ON** : if the values is set `true`, it will switch on **[Auto-feed](./tips.md/#auto-feed)** function that will archive experiments that have not been submitted through NOMAD. It will only work if IconNMR generates dataset name in a generic format XXX-XXX-username.
+- **AUTO_FEED_ON** : if the values is set `true`, it will switch on **[Auto-feed](./tips.md/#auto-feed)** function that will archive experiments that have not been submitted through NOMAD. It will only work if IconNMR generates dataset name in a generic format XXX-XXX-username.
 
 ## Start/Stop the server {#start-stop}
 
