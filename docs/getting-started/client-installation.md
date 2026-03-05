@@ -85,6 +85,14 @@ npm run verbose
 
 ![Client Verbose Output](./assets/NOMAD_client_verbose.png)
 
+:::caution
+If _**client fails to start**_, it is usually due to misconfiguration of status file path. Check following points
+
+- Has `status.html` file been created? If not, open an IconNMR queue and perform any operation and then check `status_files` folder again.
+- Are paths to status/history html files defined in IconNMR configuration?
+- Are these paths also correctly entered in client configuration file?  
+  :::
+
 ### Star client on Windows startup
 
 Create a .bat file

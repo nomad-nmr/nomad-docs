@@ -28,6 +28,10 @@ If you want to use Day/Night and Priority features of NOMAD traffic control. You
 
 ![IconNMR automation priority](./assets/IconNMR_config_priority.png)
 
+---
+
+Once you are finished with IconNMR configuration, start IconNMR, open a queue and make any change in the queue. That should create a `status.html` file in `status-files` folder. If `/status-files/status.html` path does not exist the spectrometer client will likely fail to start.
+
 :::danger
 For submitting samples to IconNMR through the external setup directory, the IconNMR automation window has to be open by user with "Supervisor" permissions. In the case of standard TopSpin/IconNMR installation you could use **_nmrsu_** user.
 
