@@ -1,6 +1,6 @@
 import React from 'react'
 import TweenOne from 'rc-tween-one'
-import logoRound from '@site/static/img/logo-round.png'
+import LogoRound from '@site/static/img/logo-round.svg'
 
 const Logo = () => (
   <TweenOne
@@ -13,7 +13,7 @@ const Logo = () => (
     }}
     style={{ opacity: 0, transform: 'scale(0)' }}
   >
-    <img src={logoRound} style={{ width: '40%', margin: '0 100px' }} />
+    <LogoRound style={{ width: '40%', margin: '0 100px' }} />
   </TweenOne>
 )
 

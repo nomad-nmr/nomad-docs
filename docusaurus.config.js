@@ -45,7 +45,7 @@ const config = {
         title: 'NOMAD',
         logo: {
           alt: 'NOMAD Logo',
-          src: 'img/logo-round.png'
+          src: 'img/logo-round.svg'
         },
         items: [
           {

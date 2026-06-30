@@ -39,12 +39,6 @@ function HomepageHeader(props) {
           >
             Get Started
           </Link>
-          <button
-            className='button button--secondary button--lg'
-            onClick={() => props.toggleModal(true)}
-          >
-            Demo
-          </button>
         </div>
       </div>
       <Logo />

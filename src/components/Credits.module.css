@@ -34,3 +34,20 @@
 .Icons a {
   margin: 0 10px;
 }
+
+.Developed {
+  display: flex;
+  align-items: center;
+  width: 600px;
+  margin-left: 40px;
+}
+
+.Colab {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Colab img {
+  scale: 70%;
+}
