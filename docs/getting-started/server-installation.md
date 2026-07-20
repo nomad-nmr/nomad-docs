@@ -139,6 +139,7 @@ NODE_ENV='production'
 
 #Frontend host url
 FRONT_HOST_URL='###'
+HOST_NAME='###'
 
 #Password for automatically generated admin user
 ADMIN_PASSWORD='###'
@@ -161,6 +162,7 @@ SMTP_SENDER='###'
 All entries with value ### need to be edited.
 
 - **FRONT_HOST_URL** : URL of the server hosting your system. For example: `http://nomad.my_domain.uk`
+- **HOST_NAME** : The name of the hosting organisation that appears at the home page.
 - **ADMIN_PASSWORD** : A backdoor password of your choice that will enable you to login with username admin after system installation.
   :::caution
   The user admin with the password set in environmental variables is only created at server startup with no users in the database. If the user admin has already been created changing ADMIN_PASSWORD in environmental variables will not change the password in the database.  
