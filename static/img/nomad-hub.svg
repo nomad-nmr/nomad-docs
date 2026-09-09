@@ -1,0 +1,80 @@
+<svg id="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="400" viewBox="0 0 400 400">
+  <g id="svgg">
+    <!-- ground shelf -->
+    <rect x="20" y="356" width="360" height="7" rx="3.5" fill="#d3dbdb"/>
+
+    <!-- publish flow: local servers push data up into the shared hub -->
+    <g fill="#587c58">
+      <g transform="translate(155 150) rotate(23.5)">
+        <path d="M0 -6 L-9 12 L9 12 Z"/>
+        <line x1="0" y1="7" x2="0" y2="150" stroke="#587c58" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.5 10"/>
+      </g>
+      <g transform="translate(200 150)">
+        <path d="M0 -6 L-9 12 L9 12 Z"/>
+        <line x1="0" y1="7" x2="0" y2="138" stroke="#587c58" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.5 10"/>
+      </g>
+      <g transform="translate(245 150) rotate(-23.5)">
+        <path d="M0 -6 L-9 12 L9 12 Z"/>
+        <line x1="0" y1="7" x2="0" y2="150" stroke="#587c58" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.5 10"/>
+      </g>
+    </g>
+
+    <!-- the NOMAD-NMR Hub: a shared, hosted repository -->
+    <g fill="#d3dbdb">
+      <circle cx="200" cy="98" r="50"/>
+      <circle cx="143" cy="116" r="33"/>
+      <circle cx="257" cy="112" r="37"/>
+      <circle cx="172" cy="132" r="24"/>
+      <rect x="110" y="100" width="180" height="48" rx="24"/>
+    </g>
+    <!-- platform edge -->
+    <rect x="120" y="144" width="160" height="9" rx="4.5" fill="#4db3e0"/>
+
+    <!-- the archived data is chemistry / NMR data -->
+    <path d="M200 69 L223.4 82.5 L223.4 109.5 L200 123 L176.6 109.5 L176.6 82.5 Z M200 82 L212.1 89 L212.1 103 L200 110 L187.9 103 L187.9 89 Z" fill="#4db3e0" fill-rule="evenodd"/>
+    <g fill="#e5d83e">
+      <circle cx="200" cy="69" r="3.6"/>
+      <circle cx="223.4" cy="82.5" r="3.6"/>
+      <circle cx="223.4" cy="109.5" r="3.6"/>
+      <circle cx="200" cy="123" r="3.6"/>
+      <circle cx="176.6" cy="109.5" r="3.6"/>
+      <circle cx="176.6" cy="82.5" r="3.6"/>
+    </g>
+
+    <!-- REST API port: programmatic access for scripts and AI agents -->
+    <rect x="252" y="132" width="54" height="30" rx="8" fill="#e46444"/>
+    <g fill="none" stroke="#d3dbdb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M270 139 L263 147 L270 155"/>
+      <path d="M279 137 L273 157"/>
+      <path d="M288 139 L295 147 L288 155"/>
+    </g>
+
+    <!-- local NOMAD servers -->
+    <g id="nomad-servers">
+      <g transform="translate(64 288)">
+        <rect x="0" y="0" width="62" height="64" rx="7" fill="#4db3e0"/>
+        <rect x="7" y="7" width="48" height="50" rx="4" fill="#d3dbdb"/>
+        <rect x="13" y="15" width="36" height="5" rx="2.5" fill="#e46444"/>
+        <rect x="13" y="26" width="36" height="5" rx="2.5" fill="#e46444"/>
+        <circle cx="18" cy="45" r="4" fill="#587c58"/>
+        <rect x="28" y="41" width="21" height="8" rx="2.5" fill="#4db3e0"/>
+      </g>
+      <g transform="translate(169 288)">
+        <rect x="0" y="0" width="62" height="64" rx="7" fill="#4db3e0"/>
+        <rect x="7" y="7" width="48" height="50" rx="4" fill="#d3dbdb"/>
+        <rect x="13" y="15" width="36" height="5" rx="2.5" fill="#e46444"/>
+        <rect x="13" y="26" width="36" height="5" rx="2.5" fill="#e46444"/>
+        <circle cx="18" cy="45" r="4" fill="#587c58"/>
+        <rect x="28" y="41" width="21" height="8" rx="2.5" fill="#4db3e0"/>
+      </g>
+      <g transform="translate(274 288)">
+        <rect x="0" y="0" width="62" height="64" rx="7" fill="#4db3e0"/>
+        <rect x="7" y="7" width="48" height="50" rx="4" fill="#d3dbdb"/>
+        <rect x="13" y="15" width="36" height="5" rx="2.5" fill="#e46444"/>
+        <rect x="13" y="26" width="36" height="5" rx="2.5" fill="#e46444"/>
+        <circle cx="18" cy="45" r="4" fill="#587c58"/>
+        <rect x="28" y="41" width="21" height="8" rx="2.5" fill="#4db3e0"/>
+      </g>
+    </g>
+  </g>
+</svg>

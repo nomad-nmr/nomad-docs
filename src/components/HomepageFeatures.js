@@ -63,7 +63,7 @@ const FeatureList = [
   },
   {
     title: 'NOMAD-NMR Hub',
-    Svg: require('../../static/img/distributed.svg').default,
+    Svg: require('../../static/img/nomad-hub.svg').default,
     description: (
       <ul className={styles.featureList}>
         <li className={styles.featurePlanned}>
