@@ -31,19 +31,16 @@
     <!-- platform edge -->
     <rect x="112" y="143" width="176" height="9" rx="4.5" fill="#4db3e0"/>
 
-    <!-- stored alongside the metadata: molecular structures ... -->
-    <path d="M172 77 L191.05 88 L191.05 110 L172 121 L152.95 110 L152.95 88 Z M172 88 L181.53 93.5 L181.53 104.5 L172 110 L162.47 104.5 L162.47 93.5 Z" fill="#4db3e0" fill-rule="evenodd"/>
-    <g fill="#e5d83e">
-      <circle cx="172" cy="77" r="3.3"/>
-      <circle cx="191.05" cy="88" r="3.3"/>
-      <circle cx="191.05" cy="110" r="3.3"/>
-      <circle cx="172" cy="121" r="3.3"/>
-      <circle cx="152.95" cy="110" r="3.3"/>
-      <circle cx="152.95" cy="88" r="3.3"/>
+    <!-- stored alongside the metadata: molecular structures (1,3-dimethylbenzene) ... -->
+    <ellipse cx="172" cy="129" rx="9" ry="6.5" fill="#e5d83e"/>
+    <g fill="none" stroke="#4db3e0" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M172 85 L191.05 96 L191.05 118 L172 129 L152.95 118 L152.95 96 Z" stroke-width="3"/>
+      <path d="M152.95 96 L144.29 91 M191.05 96 L199.71 91" stroke-width="3"/>
+      <path d="M159.5 98.6 L170.9 92 M185.6 100.4 L185.6 113.6 M170.9 122 L159.5 115.4" stroke-width="2.2"/>
     </g>
 
     <!-- ... and the spectra themselves: an NMR triplet -->
-    <path d="M208 115 L216 115 L218 99 L220 115 L234 115 L236 81 L238 115 L252 115 L254 99 L256 115 L264 115" fill="none" stroke="#e46444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M204 134 L208 134 L210 118 L212 134 L224 134 L226 100 L228 134 L240 134 L242 118 L244 134 L248 134" fill="none" stroke="#e46444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
 
     <!-- REST API port: programmatic access for scripts and AI agents -->
     <rect x="252" y="132" width="54" height="30" rx="8" fill="#e46444"/>

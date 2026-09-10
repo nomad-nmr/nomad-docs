@@ -16,7 +16,7 @@ Nuclear Magnetic Resonance (NMR) spectroscopy is a powerful analytical technique
 
 Efficient management of Nuclear Magnetic Resonance (NMR) data in laboratory settings presents a significant challenge. While NMR spectroscopy is a powerful analytical technique, the data it generates is often complex and voluminous. As researchers strive to adhere to the **[F.A.I.R](https://www.go-fair.org/fair-principles/)** (**F**indable, **A**ccessible, **I**nteroperable, and **R**eusable) research data principles, several obstacles hinder seamless data management and compliance. Data findability and accessibility is hindered by fragmented data storage on users' PCs and reliance on disparate software instances, making it challenging for researchers to locate relevant datasets efficiently. Furthermore, the conversion of NMR data into images pasted in Word or PDF documents for sharing and publication undermines data reusability. Accessibility also faces roadblocks due to the lack of a data repository that would serve as an equivalent to the **C**ambridge **C**rystallographic **D**ata **C**entre (**[CCDC](https://www.ccdc.cam.ac.uk/)**) for NMR data, leading to restricted access to already published NMR data and limited collaboration.
 
-![NMR data problem](./assets/NMR-data-problem.png)
+![With NMR data today, files land on a shared network drive that cannot be searched, are copied onto users' PCs into incompatible processing software, and end up flattened into Word and PDF documents with the raw data lost — undermining the F.A.I.R. principles](./assets/NMR-data-problem.svg)
 
 ## 3 The NOMAD Solution
 
@@ -24,7 +24,7 @@ NOMAD offers a transformative solution for NMR data management that streamlines 
 
 NOMAD also exposes a REST API that opens the archived data beyond the browser-based interface. Today, this API allows programmatic clients — including AI agents — to pull archived NMR data and metadata directly, enabling automated analysis and integration into wider computational workflows. Looking ahead, the same API will support publishing in the other direction: allowing users to push their data straight from their NOMAD server to the NOMAD-NMR Hub, a shared NMR data repository built in collaboration with the Physical Sciences Data Infrastructure (**[PSDI](https://www.psdi.ac.uk/)**). Together, these push and pull pathways turn NOMAD into a connective layer between individual labs, a national data repository, and the programmatic tools researchers increasingly rely on.
 
-![NMR data solution](./assets/NMR-data-solution.png)
+![With NOMAD, the Submission Portal books each experiment on the spectrometer and captures its provenance metadata up front; the acquired data then flows into Data Storage and on to the NMRium-powered NMR Lab Notebook, keeping a live link to the raw data throughout, while a REST API lets AI agents and scripts pull archived data today and will push it to the PSDI-backed NOMAD-NMR Hub](./assets/NMR-data-solution.svg)
 
 ## 4. Key Features
 

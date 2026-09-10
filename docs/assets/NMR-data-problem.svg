@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="505" viewBox="0 0 960 505" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="ah-blue" viewBox="0 0 14 14" refX="11" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L14 7 L0 14 Z" fill="#4db3e0"/>
+    </marker>
+    <marker id="ah-red" viewBox="0 0 14 14" refX="11" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L14 7 L0 14 Z" fill="#e46444"/>
+    </marker>
+    <g id="magnet">
+      <!-- support stand -->
+      <rect x="-22" y="32" width="6" height="22" rx="1" fill="#c3cdcd"/>
+      <rect x="16" y="32" width="6" height="22" rx="1" fill="#c3cdcd"/>
+      <rect x="-11" y="32" width="6" height="22" rx="1" fill="#cfd7d7"/>
+      <rect x="5" y="32" width="6" height="22" rx="1" fill="#cfd7d7"/>
+      <rect x="-30" y="51" width="60" height="7" rx="3" fill="#c3cdcd"/>
+      <!-- superconducting cryostat barrel -->
+      <rect x="-28" y="-34" width="56" height="66" rx="12" fill="#d3dbdb"/>
+      <ellipse cx="0" cy="-34" rx="28" ry="9" fill="#c8d0d0"/>
+      <ellipse cx="0" cy="-34" rx="20" ry="6" fill="#d9e0e0"/>
+      <!-- helium / nitrogen fill ports -->
+      <rect x="-15" y="-48" width="8" height="16" rx="2.5" fill="#c3cdcd"/>
+      <rect x="7" y="-48" width="8" height="16" rx="2.5" fill="#c3cdcd"/>
+      <!-- sample bore -->
+      <rect x="-3" y="-52" width="6" height="20" rx="2" fill="#b7c2c2"/>
+    </g>
+  </defs>
+
+  <rect x="8" y="8" width="944" height="489" rx="18" fill="#fdfefe" stroke="#e6ebeb"/>
+
+  <text x="480" y="44" text-anchor="middle" font-size="23" font-weight="600" fill="#3f4c4c">Managing NMR data today</text>
+  <text x="480" y="70" text-anchor="middle" font-size="13.5" fill="#77827f">The shared drive isn't searchable, each PC runs different software, and results become flat images</text>
+
+  <g transform="translate(0 -95)">
+  <!-- spectrometers -->
+  <use href="#magnet" transform="translate(84 296) scale(0.94)"/>
+  <use href="#magnet" transform="translate(134 304) scale(0.76)"/>
+  <text x="100" y="452" text-anchor="middle" font-size="12.5" fill="#77827f">NMR spectrometers</text>
+  <line x1="173" y1="286" x2="241" y2="286" stroke="#4db3e0" stroke-width="4" marker-end="url(#ah-blue)"/>
+
+  <!-- shared network drive, with no way to search it -->
+  <g transform="translate(300 0)">
+    <rect x="-40" y="234" width="80" height="94" rx="7" fill="#4db3e0"/>
+    <rect x="-31" y="244" width="62" height="16" rx="2" fill="#e2e8e8"/>
+    <rect x="-31" y="266" width="62" height="16" rx="2" fill="#e2e8e8"/>
+    <rect x="-31" y="288" width="62" height="16" rx="2" fill="#e2e8e8"/>
+    <circle cx="24" cy="252" r="2.2" fill="#587c58"/>
+    <circle cx="24" cy="274" r="2.2" fill="#587c58"/>
+    <circle cx="24" cy="296" r="2.2" fill="#587c58"/>
+  </g>
+  <g transform="translate(334 316)">
+    <circle cx="0" cy="0" r="13" fill="#eef2f2" stroke="#4db3e0" stroke-width="4"/>
+    <line x1="9" y1="9" x2="19" y2="19" stroke="#4db3e0" stroke-width="5" stroke-linecap="round"/>
+    <line x1="-15" y1="13" x2="15" y2="-13" stroke="#e46444" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="300" y="452" text-anchor="middle" font-size="14" font-weight="600" fill="#3f4c4c">Shared network drive</text>
+  <text x="300" y="470" text-anchor="middle" font-size="12" fill="#77827f">no way to search it</text>
+  <line x1="356" y1="286" x2="459" y2="286" stroke="#4db3e0" stroke-width="4" marker-end="url(#ah-blue)"/>
+
+  <!-- scattered PCs, each a different processing package -->
+  <g transform="translate(478 214)">
+    <rect x="0" y="0" width="98" height="68" rx="8" fill="#4db3e0"/>
+    <rect x="7" y="8" width="84" height="52" rx="3" fill="#e2e8e8"/>
+    <rect x="7" y="8" width="84" height="11" rx="3" fill="#4db3e0"/>
+    <path d="M20 54 L27 54 L30 43 L33 54 L43 54 L46 32 L49 54 L59 54 L62 43 L65 54 L72 54" fill="none" stroke="#e46444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="42" y="68" width="14" height="8" rx="2" fill="#4db3e0"/>
+    <rect x="32" y="76" width="34" height="5" rx="2.5" fill="#4db3e0"/>
+  </g>
+  <g transform="translate(552 250)">
+    <rect x="0" y="0" width="98" height="68" rx="8" fill="#4db3e0"/>
+    <rect x="7" y="8" width="84" height="52" rx="3" fill="#e2e8e8"/>
+    <rect x="7" y="8" width="84" height="11" rx="3" fill="#e46444"/>
+    <g fill="#e0a08c">
+      <rect x="14" y="26" width="7" height="4" rx="2"/><rect x="26" y="26" width="34" height="4" rx="2"/><rect x="66" y="26" width="16" height="4" rx="2"/>
+      <rect x="14" y="36" width="7" height="4" rx="2"/><rect x="26" y="36" width="34" height="4" rx="2"/><rect x="66" y="36" width="16" height="4" rx="2"/>
+      <rect x="14" y="46" width="7" height="4" rx="2"/><rect x="26" y="46" width="34" height="4" rx="2"/><rect x="66" y="46" width="16" height="4" rx="2"/>
+    </g>
+    <rect x="42" y="68" width="14" height="8" rx="2" fill="#4db3e0"/>
+    <rect x="32" y="76" width="34" height="5" rx="2.5" fill="#4db3e0"/>
+  </g>
+  <g transform="translate(486 286)">
+    <rect x="0" y="0" width="98" height="68" rx="8" fill="#4db3e0"/>
+    <rect x="7" y="8" width="84" height="52" rx="3" fill="#e2e8e8"/>
+    <rect x="7" y="8" width="84" height="11" rx="3" fill="#587c58"/>
+    <path d="M16 44 L23 44 L26 35 L29 44 L39 44 L42 26 L45 44 L55 44 L58 35 L61 44 L68 44" fill="none" stroke="#ef9d84" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M20 54 L27 54 L30 45 L33 54 L43 54 L46 36 L49 54 L59 54 L62 45 L65 54 L72 54" fill="none" stroke="#e46444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="42" y="68" width="14" height="8" rx="2" fill="#4db3e0"/>
+    <rect x="32" y="76" width="34" height="5" rx="2.5" fill="#4db3e0"/>
+  </g>
+  <text x="562" y="452" text-anchor="middle" font-size="14" font-weight="600" fill="#3f4c4c">Copied onto users' PCs</text>
+  <text x="562" y="470" text-anchor="middle" font-size="12" fill="#77827f">incompatible software</text>
+
+  <line x1="666" y1="286" x2="725" y2="286" stroke="#e46444" stroke-width="3.5" stroke-dasharray="7 5" marker-end="url(#ah-red)"/>
+
+  <!-- flattened into documents -->
+  <path d="M744 234 h114 l28 24 v124 h-142 z" fill="#ffffff" stroke="#ccd4d4" stroke-width="1.5"/>
+  <path d="M858 234 v24 h28 z" fill="#eef2f2" stroke="#ccd4d4" stroke-width="1.5"/>
+  <rect x="756" y="276" width="118" height="52" rx="3" fill="#e9eded"/>
+  <path d="M780 322 L790 322 L794 310 L798 322 L810 322 L814 296 L818 322 L830 322 L834 310 L838 322 L848 322" fill="none" stroke="#e46444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#d3dbdb">
+    <rect x="762" y="340" width="108" height="6" rx="3"/>
+    <rect x="762" y="352" width="84" height="6" rx="3"/>
+  </g>
+  <text x="815" y="373" text-anchor="middle" font-size="10.5" font-weight="700" fill="#9aa8a8">.docx / .pdf</text>
+  <g transform="translate(815 250)">
+    <path d="M-5 -9 a9 9 0 0 0 -9 9 a9 9 0 0 0 9 9" fill="none" stroke="#e46444" stroke-width="3.6" stroke-linecap="round"/>
+    <path d="M5 -9 a9 9 0 0 1 9 9 a9 9 0 0 1 -9 9" fill="none" stroke="#e46444" stroke-width="3.6" stroke-linecap="round"/>
+    <g stroke="#e46444" stroke-width="2" stroke-linecap="round">
+      <path d="M0 -13 l-3 6"/><path d="M0 7 l3 -6"/>
+    </g>
+  </g>
+  <text x="815" y="452" text-anchor="middle" font-size="14" font-weight="600" fill="#3f4c4c">Flattened into documents</text>
+  <text x="815" y="470" text-anchor="middle" font-size="12" fill="#77827f">raw data lost</text>
+
+  <!-- F.A.I.R. principles undermined -->
+  <line x1="70" y1="500" x2="890" y2="500" stroke="#e6ebeb" stroke-width="1.5"/>
+  <text x="470" y="552" text-anchor="middle" font-size="34" font-weight="700" letter-spacing="17" fill="#9aa6a6">FAIR</text>
+  <path d="M556 532 l18 18 M574 532 l-18 18" fill="none" stroke="#e46444" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="480" y="582" text-anchor="middle" font-size="12.5" fill="#77827f">F.A.I.R. data principles undermined</text>
+  </g>
+</svg>
