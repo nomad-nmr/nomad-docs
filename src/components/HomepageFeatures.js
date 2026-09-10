@@ -67,6 +67,9 @@ const FeatureList = [
     description: (
       <ul className={styles.featureList}>
         <li className={styles.featurePlanned}>
+          Usage statistics collected from all NOMAD-NMR servers
+        </li>
+        <li className={styles.featurePlanned}>
           REST API for programmatic access to archived data and metadata, usable by scripts and AI
           agents
         </li>
@@ -76,13 +79,6 @@ const FeatureList = [
           <a href='https://www.psdi.ac.uk/' target='_blank'>
             PSDI
           </a>
-        </li>
-        <li className={styles.featurePlanned}>
-          A national NMR data repository, echoing the role of the{' '}
-          <a href='https://www.ccdc.cam.ac.uk/' target='_blank'>
-            CCDC
-          </a>{' '}
-          for crystallography
         </li>
       </ul>
     )

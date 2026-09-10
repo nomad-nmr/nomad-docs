@@ -27,9 +27,9 @@
     <circle cx="176" cy="214" r="2.4" fill="#d3dbdb"/>
 
     <!-- automatic upload into storage -->
-    <g transform="translate(176 176) rotate(180)" fill="#587c58">
+    <g transform="translate(176 170) rotate(180)" fill="#587c58">
       <path d="M0 -7 L-10 13 L10 13 Z"/>
-      <line x1="0" y1="9" x2="0" y2="70" stroke="#587c58" stroke-width="5" stroke-linecap="round" stroke-dasharray="0.5 11"/>
+      <line x1="0" y1="9" x2="0" y2="64" stroke="#587c58" stroke-width="5" stroke-linecap="round" stroke-dasharray="0.5 11"/>
     </g>
 
     <!-- search by metadata -->
