@@ -1,0 +1,287 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="700" viewBox="0 0 960 700" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <!--
+    NOMAD diagram motif catalogue.
+
+    Every group below is lifted from a diagram that already ships, so reusing one
+    keeps a new figure consistent with the rest of the site by construction. Drop
+    one in with <use href="#id" transform="translate(cx cy) scale(s)"/>.
+
+    Each motif has a deliberate local origin, noted in its comment — usually the
+    point you would naturally align to (a centre, a top-left, a baseline). Scaling a
+    <use> scales stroke widths with it, which is normally what you want.
+
+    Copy the markup instead of <use>-ing it when you need to recolour part of a
+    motif (a monitor's title bar, a status dot), because <use> cannot reach inside.
+
+    Render this file to see the catalogue:
+      node ../scripts/preview.mjs motifs.svg
+  -->
+  <defs>
+    <!-- Arrowheads. markerUnits="userSpaceOnUse" keeps the head a fixed size
+         instead of scaling with stroke-width; the tip sits 3px past the line end
+         (viewBox runs to 14, refX is 11), which every gap calculation must allow
+         for. See SKILL.md "Connectors". -->
+    <marker id="ah-blue" viewBox="0 0 14 14" refX="11" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L14 7 L0 14 Z" fill="#4db3e0"/>
+    </marker>
+    <marker id="ah-green" viewBox="0 0 14 14" refX="11" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L14 7 L0 14 Z" fill="#587c58"/>
+    </marker>
+    <marker id="ah-red" viewBox="0 0 14 14" refX="11" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L14 7 L0 14 Z" fill="#e46444"/>
+    </marker>
+
+    <!-- NMR spectrometer: superconducting cryostat on its stand.
+         Origin: bore axis, at the barrel's shoulder. Extent 60×110. -->
+    <g id="magnet">
+      <rect x="-22" y="32" width="6" height="22" rx="1" fill="#c3cdcd"/>
+      <rect x="16" y="32" width="6" height="22" rx="1" fill="#c3cdcd"/>
+      <rect x="-11" y="32" width="6" height="22" rx="1" fill="#cfd7d7"/>
+      <rect x="5" y="32" width="6" height="22" rx="1" fill="#cfd7d7"/>
+      <rect x="-30" y="51" width="60" height="7" rx="3" fill="#c3cdcd"/>
+      <rect x="-28" y="-34" width="56" height="66" rx="12" fill="#d3dbdb"/>
+      <ellipse cx="0" cy="-34" rx="28" ry="9" fill="#c8d0d0"/>
+      <ellipse cx="0" cy="-34" rx="20" ry="6" fill="#d9e0e0"/>
+      <rect x="-15" y="-48" width="8" height="16" rx="2.5" fill="#c3cdcd"/>
+      <rect x="7" y="-48" width="8" height="16" rx="2.5" fill="#c3cdcd"/>
+      <rect x="-3" y="-52" width="6" height="20" rx="2" fill="#b7c2c2"/>
+    </g>
+
+    <!-- 1,3-dimethylbenzene (m-xylene): pointy-top ring, three Kekule bonds on
+         alternating edges, two methyls at the meta positions, and a yellow
+         highlight on the bottom vertex standing for an NMRium assignment.
+         Origin: ring centre. Extent 28×24. -->
+    <g id="benzene" fill="none" stroke="#4db3e0" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="0" cy="10" rx="5" ry="3.6" fill="#e5d83e" stroke="none"/>
+      <path d="M0 -10 L8.7 -5 L8.7 5 L0 10 L-8.7 5 L-8.7 -5 Z" stroke-width="2.2"/>
+      <path d="M-8.7 -5 L-13.9 -8 M8.7 -5 L13.9 -8" stroke-width="2.2"/>
+      <path d="M-5.7 -3.8 L-0.5 -6.8 M6.2 -3 L6.2 3 M-0.5 6.8 L-5.7 3.8" stroke-width="1.6"/>
+    </g>
+
+    <!-- NMR triplet: sharp 1:2:1 spikes on a flat baseline. Stands in for "a
+         spectrum" anywhere one is needed. Origin: left end of the baseline.
+         Extent 32×22. -->
+    <g id="triplet">
+      <path d="M0 0 L4 0 L6 -10 L8 0 L14 0 L16 -22 L18 0 L24 0 L26 -10 L28 0 L32 0" fill="none" stroke="#e46444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Data store drum. The yellow seam marks the store a search has hit; swap it
+         to #e2e8e8 for a plain stack. Origin: centre of the top ellipse.
+         Extent 60×74. -->
+    <g id="cylinder">
+      <path d="M-30 0 v54 a30 10 0 0 0 60 0 v-54 z" fill="#4db3e0"/>
+      <ellipse cx="0" cy="0" rx="30" ry="10" fill="#d3dbdb"/>
+      <path d="M-30 26 a30 10 0 0 0 60 0" fill="none" stroke="#e5d83e" stroke-width="3"/>
+      <path d="M-30 44 a30 10 0 0 0 60 0" fill="none" stroke="#e2e8e8" stroke-width="3"/>
+    </g>
+
+    <!-- Hosted repository cloud with a blue platform edge along its base.
+         Origin: centre of the main puff. Extent 126×82. -->
+    <g id="cloud">
+      <g fill="#d3dbdb">
+        <circle cx="0" cy="0" r="40"/>
+        <circle cx="-38" cy="19" r="24"/>
+        <circle cx="40" cy="17" r="26"/>
+        <rect x="-60" y="0" width="120" height="40" rx="20"/>
+      </g>
+      <rect x="-52" y="34" width="104" height="8" rx="4" fill="#4db3e0"/>
+    </g>
+
+    <!-- A local NOMAD server. Origin: top-left. Extent 62×64. -->
+    <g id="rack">
+      <rect x="0" y="0" width="62" height="64" rx="7" fill="#4db3e0"/>
+      <rect x="7" y="7" width="48" height="50" rx="4" fill="#d3dbdb"/>
+      <rect x="13" y="15" width="36" height="5" rx="2.5" fill="#e46444"/>
+      <rect x="13" y="26" width="36" height="5" rx="2.5" fill="#e46444"/>
+      <circle cx="18" cy="45" r="4" fill="#587c58"/>
+      <rect x="28" y="41" width="21" height="8" rx="2.5" fill="#4db3e0"/>
+    </g>
+
+    <!-- Shared network drive / NAS, three bays. Origin: top-left. Extent 80×94. -->
+    <g id="drive">
+      <rect x="0" y="0" width="80" height="94" rx="7" fill="#4db3e0"/>
+      <rect x="9" y="10" width="62" height="16" rx="2" fill="#e2e8e8"/>
+      <rect x="9" y="32" width="62" height="16" rx="2" fill="#e2e8e8"/>
+      <rect x="9" y="54" width="62" height="16" rx="2" fill="#e2e8e8"/>
+      <circle cx="64" cy="18" r="2.2" fill="#587c58"/>
+      <circle cx="64" cy="40" r="2.2" fill="#587c58"/>
+      <circle cx="64" cy="62" r="2.2" fill="#587c58"/>
+    </g>
+
+    <!-- Desktop PC. The title bar is the one part you normally recolour, to say
+         which application this is, so copy rather than <use> when that matters.
+         Screen area is x 7..91, y 19..60. Origin: top-left. Extent 98×81. -->
+    <g id="monitor">
+      <rect x="0" y="0" width="98" height="68" rx="8" fill="#4db3e0"/>
+      <rect x="7" y="8" width="84" height="52" rx="3" fill="#e2e8e8"/>
+      <rect x="7" y="8" width="84" height="11" rx="3" fill="#4db3e0"/>
+      <rect x="42" y="68" width="14" height="8" rx="2" fill="#4db3e0"/>
+      <rect x="32" y="76" width="34" height="5" rx="2.5" fill="#4db3e0"/>
+    </g>
+
+    <!-- A flattened document (.docx / .pdf) with a folded corner, a pasted image
+         and two lines of body text. Origin: top-left. Extent 142×148. -->
+    <g id="document">
+      <path d="M0 0 h114 l28 24 v124 h-142 z" fill="#ffffff" stroke="#ccd4d4" stroke-width="1.5"/>
+      <path d="M114 0 v24 h28 z" fill="#eef2f2" stroke="#ccd4d4" stroke-width="1.5"/>
+      <rect x="12" y="42" width="118" height="52" rx="3" fill="#e9eded"/>
+      <rect x="18" y="106" width="108" height="6" rx="3" fill="#d3dbdb"/>
+      <rect x="18" y="118" width="84" height="6" rx="3" fill="#d3dbdb"/>
+    </g>
+
+    <!-- Programmatic client: an AI agent or script. Origin: top-left of the head
+         (arms and antenna extend outside it). Extent 100×76. -->
+    <g id="robot">
+      <line x1="42" y1="0" x2="42" y2="-10" stroke="#4db3e0" stroke-width="3"/>
+      <circle cx="42" cy="-13" r="3.5" fill="#e46444"/>
+      <rect x="-8" y="20" width="8" height="16" rx="3" fill="#4db3e0"/>
+      <rect x="84" y="20" width="8" height="16" rx="3" fill="#4db3e0"/>
+      <rect x="0" y="0" width="84" height="60" rx="14" fill="#4db3e0"/>
+      <rect x="12" y="10" width="60" height="40" rx="8" fill="#e2e8e8"/>
+      <circle cx="29" cy="27" r="4.5" fill="#4db3e0"/>
+      <circle cx="55" cy="27" r="4.5" fill="#4db3e0"/>
+      <path d="M30 39 q12 7 24 0" fill="none" stroke="#4db3e0" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <!-- REST API port, meant to sit flush against a platform wall.
+         Origin: top-left. Extent 40×60. -->
+    <g id="api-port">
+      <rect x="0" y="0" width="40" height="60" rx="8" fill="#e46444"/>
+      <g fill="none" stroke="#fdfefe" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 14 l-7 7 l7 7"/>
+        <path d="M26 14 l7 7 l-7 7"/>
+      </g>
+      <text x="20" y="54" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fdfefe">API</text>
+    </g>
+
+    <!-- Search. Origin: lens centre. Extent ~40×40. -->
+    <g id="magnifier">
+      <circle cx="0" cy="0" r="13" fill="#e2e8e8" stroke="#4db3e0" stroke-width="4"/>
+      <line x1="9" y1="9" x2="20" y2="20" stroke="#4db3e0" stroke-width="5" stroke-linecap="round"/>
+    </g>
+
+    <!-- Search, struck through: "this cannot be searched". -->
+    <g id="magnifier-struck">
+      <use href="#magnifier"/>
+      <line x1="-15" y1="13" x2="15" y2="-13" stroke="#e46444" stroke-width="4" stroke-linecap="round"/>
+    </g>
+
+    <!-- Access control. Origin: top-centre of the body, so it sits naturally on
+         the lid of a cylinder. Extent 15×18. -->
+    <g id="padlock">
+      <path d="M-5 1 v-3 a5 5 0 0 1 10 0 v3" fill="none" stroke="#e46444" stroke-width="2.2"/>
+      <rect x="-7.5" y="0" width="15" height="10" rx="2" fill="#e46444"/>
+      <circle cx="0" cy="5" r="1.6" fill="#fdfefe"/>
+    </g>
+
+    <!-- NMR tubes in an autosampler rack; the coral tube is the active one.
+         Origin: top-left. Extent 64×42. -->
+    <g id="tube-rack">
+      <rect x="0" y="35" width="64" height="7" rx="3" fill="#4db3e0"/>
+      <rect x="6" y="5" width="7" height="34" rx="3.5" fill="#d3dbdb"/><rect x="6" y="25" width="7" height="14" rx="3.5" fill="#e5d83e"/><rect x="5" y="0" width="9" height="6" rx="2" fill="#4db3e0"/>
+      <rect x="20" y="5" width="7" height="34" rx="3.5" fill="#d3dbdb"/><rect x="20" y="25" width="7" height="14" rx="3.5" fill="#e5d83e"/><rect x="19" y="0" width="9" height="6" rx="2" fill="#4db3e0"/>
+      <rect x="34" y="5" width="7" height="34" rx="3.5" fill="#d3dbdb"/><rect x="34" y="25" width="7" height="14" rx="3.5" fill="#e46444"/><rect x="33" y="0" width="9" height="6" rx="2" fill="#e46444"/>
+      <rect x="48" y="5" width="7" height="34" rx="3.5" fill="#d3dbdb"/><rect x="48" y="25" width="7" height="14" rx="3.5" fill="#e5d83e"/><rect x="47" y="0" width="9" height="6" rx="2" fill="#4db3e0"/>
+    </g>
+
+    <!-- The landing icons' flow arrow: a solid head trailing round dots. Points up.
+         Origin: the tip. The trail length is baked in at 70, so copy the markup and
+         change the line's y2 when you need a different reach. -->
+    <g id="flow-arrow">
+      <path d="M0 -7 L-10 13 L10 13 Z" fill="#587c58"/>
+      <line x1="0" y1="9" x2="0" y2="70" stroke="#587c58" stroke-width="5" stroke-linecap="round" stroke-dasharray="0.5 11"/>
+    </g>
+
+    <!-- Verdict glyphs for a figure's summary strip. Origin: path start. -->
+    <g id="tick">
+      <path d="M0 0 l7 8 l15 -18" fill="none" stroke="#587c58" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g id="cross">
+      <path d="M0 0 l18 18 M18 0 l-18 18" fill="none" stroke="#e46444" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </defs>
+
+  <!-- ===================== contact sheet ===================== -->
+
+  <rect x="8" y="8" width="944" height="684" rx="18" fill="#fdfefe" stroke="#e6ebeb"/>
+  <text x="480" y="42" text-anchor="middle" font-size="18" font-weight="600" fill="#3f4c4c">NOMAD diagram motifs</text>
+
+  <g font-size="11" font-weight="600" text-anchor="middle" fill="#3f4c4c">
+    <!-- row 1 -->
+    <use href="#magnet" transform="translate(90 140) scale(0.8)"/>
+    <text x="90" y="218">#magnet</text><text x="90" y="231" font-size="9.5" font-weight="400" fill="#77827f">60×110</text>
+
+    <use href="#cylinder" transform="translate(235 108)"/>
+    <text x="235" y="218">#cylinder</text><text x="235" y="231" font-size="9.5" font-weight="400" fill="#77827f">60×74</text>
+
+    <use href="#cloud" transform="translate(380 138) scale(0.85)"/>
+    <text x="380" y="218">#cloud</text><text x="380" y="231" font-size="9.5" font-weight="400" fill="#77827f">126×82</text>
+
+    <use href="#rack" transform="translate(494 110)"/>
+    <text x="525" y="218">#rack</text><text x="525" y="231" font-size="9.5" font-weight="400" fill="#77827f">62×64</text>
+
+    <use href="#drive" transform="translate(630 96)"/>
+    <text x="670" y="218">#drive</text><text x="670" y="231" font-size="9.5" font-weight="400" fill="#77827f">80×94</text>
+
+    <use href="#monitor" transform="translate(766 102)"/>
+    <text x="815" y="218">#monitor</text><text x="815" y="231" font-size="9.5" font-weight="400" fill="#77827f">98×81</text>
+
+    <!-- row 2 -->
+    <use href="#document" transform="translate(47 282) scale(0.6)"/>
+    <text x="90" y="398">#document</text><text x="90" y="411" font-size="9.5" font-weight="400" fill="#77827f">142×148</text>
+
+    <use href="#robot" transform="translate(193 310)"/>
+    <text x="235" y="398">#robot</text><text x="235" y="411" font-size="9.5" font-weight="400" fill="#77827f">100×76</text>
+
+    <use href="#api-port" transform="translate(360 300)"/>
+    <text x="380" y="398">#api-port</text><text x="380" y="411" font-size="9.5" font-weight="400" fill="#77827f">40×60</text>
+
+    <use href="#tube-rack" transform="translate(493 309)"/>
+    <text x="525" y="398">#tube-rack</text><text x="525" y="411" font-size="9.5" font-weight="400" fill="#77827f">64×42</text>
+
+    <use href="#benzene" transform="translate(670 328) scale(1.8)"/>
+    <text x="670" y="398">#benzene</text><text x="670" y="411" font-size="9.5" font-weight="400" fill="#77827f">28×24</text>
+
+    <use href="#triplet" transform="translate(789 348) scale(1.6)"/>
+    <text x="815" y="398">#triplet</text><text x="815" y="411" font-size="9.5" font-weight="400" fill="#77827f">32×22</text>
+
+    <!-- row 3 -->
+    <use href="#magnifier" transform="translate(88 478) scale(1.3)"/>
+    <text x="90" y="530">#magnifier</text><text x="90" y="543" font-size="9.5" font-weight="400" fill="#77827f">40×40</text>
+
+    <use href="#magnifier-struck" transform="translate(233 478) scale(1.3)"/>
+    <text x="235" y="530">#magnifier-struck</text><text x="235" y="543" font-size="9.5" font-weight="400" fill="#77827f">40×40</text>
+
+    <use href="#padlock" transform="translate(380 470) scale(2)"/>
+    <text x="380" y="530">#padlock</text><text x="380" y="543" font-size="9.5" font-weight="400" fill="#77827f">15×18</text>
+
+    <use href="#flow-arrow" transform="translate(525 455) scale(0.62)"/>
+    <text x="525" y="530">#flow-arrow</text><text x="525" y="543" font-size="9.5" font-weight="400" fill="#77827f">20×77, points up</text>
+
+    <use href="#tick" transform="translate(652 482) scale(1.6)"/>
+    <text x="670" y="530">#tick</text><text x="670" y="543" font-size="9.5" font-weight="400" fill="#77827f">22×18</text>
+
+    <use href="#cross" transform="translate(801 466) scale(1.6)"/>
+    <text x="815" y="530">#cross</text><text x="815" y="543" font-size="9.5" font-weight="400" fill="#77827f">18×18</text>
+  </g>
+
+  <!-- row 4: connector styles -->
+  <line x1="70" y1="575" x2="890" y2="575" stroke="#e6ebeb" stroke-width="1.5"/>
+  <g text-anchor="middle" font-size="9.5" fill="#77827f">
+    <path d="M60 612 H180" fill="none" stroke="#4db3e0" stroke-width="3.5" marker-end="url(#ah-blue)"/>
+    <text x="120" y="640" font-size="11" font-weight="600" fill="#3f4c4c">ah-blue</text>
+    <text x="120" y="654">data moving</text>
+
+    <path d="M260 612 H380" fill="none" stroke="#587c58" stroke-width="3.5" marker-end="url(#ah-green)"/>
+    <text x="320" y="640" font-size="11" font-weight="600" fill="#3f4c4c">ah-green</text>
+    <text x="320" y="654">control / works today</text>
+
+    <path d="M460 612 H580" fill="none" stroke="#587c58" stroke-width="3.5" stroke-dasharray="7 5" marker-end="url(#ah-green)"/>
+    <text x="520" y="640" font-size="11" font-weight="600" fill="#3f4c4c">dashed</text>
+    <text x="520" y="654">planned, not built</text>
+
+    <path d="M680 586 V606 Q680 616 690 616 H860" fill="none" stroke="#e46444" stroke-width="3.5" marker-end="url(#ah-red)"/>
+    <text x="775" y="640" font-size="11" font-weight="600" fill="#3f4c4c">orthogonal + ah-red</text>
+    <text x="775" y="654">10px quadratic corner</text>
+  </g>
+</svg>
