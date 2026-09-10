@@ -22,6 +22,8 @@ The spectrometer client is a Javascript code that runs on spectrometer PC in **[
 
 ![Technical Overview](./assets/technical_overview_schema.png)
 
+More details about the overall architecture of NOMAD app can be found in **[SPEC.md](https://github.com/nomad-nmr/nomad-server/blob/main/SPEC.md)** file on GitHub.
+
 ## Set up for development
 
 The whole code base is split between two repositories. The repository **[nomad-server](https://github.com/nomad-nmr/nomad-server)** is the server side code composed of two parts **nomad-front-end** and **nomad-rest-api**. The spectrometer client has its own **[repository](https://github.com/nomad-nmr/nomad-spect-client)**.
