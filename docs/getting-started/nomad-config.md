@@ -35,6 +35,7 @@ Apart from `Group Name` you can setup some additional properties for each group 
 - **Batch Submit** : group restricted to use only submission through batch submission racks
 - **Data Access** : `user` - users within the group can see only own data, `group` - users can see data of other users within the group, `admin-b` - users can see data of other users in batch submission groups, `admin` - users have unrestricted access to data.
 - **Custom experiment list** : if defined then users within the group can access only experiments on this list. Otherwise users have access to all experiments defined for the instruments.
+- **Append custom list** : if the switch is off the custom experiment list replaces the default list of experiments. If the switch is on the custom list is appended at the end of default list. In this case, the experiments on the custom list needs to be set as `Hidden` to avoid duplication on the list.
 
 :::note
 Custom experiment list cannot be populated if there are no **[Parameter Sets](nomad-config.md#parameters-sets)** defined in NOMAD database.
