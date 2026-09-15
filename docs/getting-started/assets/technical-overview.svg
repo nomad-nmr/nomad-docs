@@ -16,19 +16,66 @@
       <path d="M14 0 L0 7 L14 14 Z" fill="#587c58"/>
     </marker>
 
-    <!-- NMR spectrometer, from motifs.svg. Origin: bore axis at the shoulder. -->
+    <!-- NMR spectrometer: superconducting cryostat on its stand, from motifs.svg.
+         Origin: bore axis, level with the lower barrel. Extent 66x119. -->
+    <linearGradient id="mag-body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c7d2d6"/>
+      <stop offset="0.16" stop-color="#f2f7f8"/>
+      <stop offset="0.44" stop-color="#ffffff"/>
+      <stop offset="0.76" stop-color="#e6edee"/>
+      <stop offset="1" stop-color="#bfc9ce"/>
+    </linearGradient>
+    <linearGradient id="mag-shroud" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3b4751"/>
+      <stop offset="0.35" stop-color="#5c6a75"/>
+      <stop offset="1" stop-color="#333d46"/>
+    </linearGradient>
+    <linearGradient id="mag-leg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#57646e"/>
+      <stop offset="0.35" stop-color="#7d8b95"/>
+      <stop offset="1" stop-color="#49555e"/>
+    </linearGradient>
+    <linearGradient id="mag-tube" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ccd6d9"/>
+      <stop offset="0.35" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#c3ced2"/>
+    </linearGradient>
     <g id="magnet">
-      <rect x="-22" y="32" width="6" height="22" rx="1" fill="#c3cdcd"/>
-      <rect x="16" y="32" width="6" height="22" rx="1" fill="#c3cdcd"/>
-      <rect x="-11" y="32" width="6" height="22" rx="1" fill="#cfd7d7"/>
-      <rect x="5" y="32" width="6" height="22" rx="1" fill="#cfd7d7"/>
-      <rect x="-30" y="51" width="60" height="7" rx="3" fill="#c3cdcd"/>
-      <rect x="-28" y="-34" width="56" height="66" rx="12" fill="#d3dbdb"/>
-      <ellipse cx="0" cy="-34" rx="28" ry="9" fill="#c8d0d0"/>
-      <ellipse cx="0" cy="-34" rx="20" ry="6" fill="#d9e0e0"/>
-      <rect x="-15" y="-48" width="8" height="16" rx="2.5" fill="#c3cdcd"/>
-      <rect x="7" y="-48" width="8" height="16" rx="2.5" fill="#c3cdcd"/>
-      <rect x="-3" y="-52" width="6" height="20" rx="2" fill="#b7c2c2"/>
+      <!-- anti-vibration feet -->
+      <g fill="#8e9aa1">
+        <rect x="-27.5" y="53" width="15" height="5" rx="2.5"/>
+        <rect x="-7.5" y="53" width="15" height="5" rx="2.5"/>
+        <rect x="12.5" y="53" width="15" height="5" rx="2.5"/>
+      </g>
+      <!-- support legs -->
+      <rect x="-25.5" y="32" width="11" height="22" rx="2" fill="url(#mag-leg)"/>
+      <rect x="-5.5" y="32" width="11" height="22" rx="2" fill="url(#mag-leg)"/>
+      <rect x="14.5" y="32" width="11" height="22" rx="2" fill="url(#mag-leg)"/>
+      <!-- base plate -->
+      <rect x="-31" y="27" width="62" height="6" rx="1.5" fill="#edf2f3" stroke="#ccd6d9" stroke-width="0.8"/>
+      <!-- superconducting cryostat barrel -->
+      <rect x="-24" y="-31" width="48" height="59" rx="8" fill="url(#mag-body)" stroke="#c9d3d6" stroke-width="0.8"/>
+      <ellipse cx="0" cy="-31" rx="24" ry="6.5" fill="#e8eef0" stroke="#c9d3d6" stroke-width="0.8"/>
+      <!-- dark shim / electronics shrouds -->
+      <rect x="-31.5" y="-8" width="9" height="38" rx="4.5" fill="url(#mag-shroud)"/>
+      <rect x="22.5" y="-8" width="9" height="38" rx="4.5" fill="url(#mag-shroud)"/>
+      <!-- front panel and status mark -->
+      <rect x="-8" y="6" width="16" height="15" rx="1.5" fill="#e2e9eb"/>
+      <rect x="-1.8" y="-3" width="3.6" height="3.6" rx="0.6" fill="#e46444"/>
+      <!-- top flange ring -->
+      <ellipse cx="0" cy="-33.5" rx="22" ry="5.4" fill="none" stroke="#86b361" stroke-width="1.7"/>
+      <!-- helium / nitrogen vent towers -->
+      <rect x="-15" y="-52" width="7" height="21" rx="2" fill="url(#mag-tube)" stroke="#c3ced2" stroke-width="0.7"/>
+      <rect x="-15" y="-52" width="7" height="9" rx="2" fill="#3b4751"/>
+      <rect x="8" y="-52" width="7" height="21" rx="2" fill="url(#mag-tube)" stroke="#c3ced2" stroke-width="0.7"/>
+      <rect x="8" y="-52" width="7" height="9" rx="2" fill="#3b4751"/>
+      <!-- sample bore / lift -->
+      <rect x="-2.5" y="-46" width="5" height="15" rx="1.5" fill="#b7c2c2"/>
+      <circle cx="0" cy="-47" r="2.3" fill="#8e9aa1"/>
+      <!-- cross rail linking the tower heads -->
+      <rect x="-15.5" y="-57.5" width="31" height="3" rx="1.5" fill="#c3ccd0"/>
+      <circle cx="-11.5" cy="-58.5" r="2.4" fill="#3b4751"/>
+      <circle cx="11.5" cy="-58.5" r="2.4" fill="#3b4751"/>
     </g>
 
     <!-- Local server, from motifs.svg. Origin: top-left. Extent 62x64. -->
