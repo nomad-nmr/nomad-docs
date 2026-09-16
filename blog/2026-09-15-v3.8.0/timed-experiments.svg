@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="596" viewBox="0 0 960 596" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <!--
+    Timed experiments (v3.8.0 blog post).
+
+    Two lanes against one shared clock axis, 18:00-23:00 at 2.5 px/min:
+      x = 130 + (minutes past 18:00) * 2.5      18:00 x130 ... 23:00 x880
+
+    Both lanes run the same reaction monitoring: four 30 min repeats on a 60 min
+    start-to-start lag from 19:30. Lane A is a loop script - the sample stays in
+    the magnet from the first repeat to the last, so nothing else runs. Lane B is
+    a timed experiment - the gaps between repeats go to other users' samples.
+  -->
+
+  <!-- the figure card. height = svg height - 16 -->
+  <rect x="8" y="8" width="944" height="580" rx="18" fill="#fdfefe" stroke="#e6ebeb"/>
+
+  <text x="480" y="44" text-anchor="middle" font-size="22" font-weight="600" fill="#3f4c4c">Timed experiments</text>
+  <text x="480" y="66" text-anchor="middle" font-size="12.5" fill="#77827f">Reaction monitoring no longer needs the magnet to itself &#8212; timed repeats are slotted</text>
+  <text x="480" y="83" text-anchor="middle" font-size="12.5" fill="#77827f">in between everybody else's experiments.</text>
+
+  <g transform="translate(0 13)">
+
+    <!-- ===================== lane A: loop script ============================= -->
+    <text x="130" y="118" font-size="13.5" font-weight="600" fill="#3f4c4c">Loop script</text>
+    <text x="130" y="135" font-size="11.5" fill="#77827f">the sample stays in the magnet for the whole loop, so nothing else can run</text>
+
+    <rect x="130" y="150" width="750" height="38" rx="7" fill="#f6f9f9"/>
+    <!-- magnet occupied from the first repeat to the end of the last -->
+    <path d="M355 150 H873 a7 7 0 0 1 7 7 V181 a7 7 0 0 1 -7 7 H355 Z" fill="#fbe3dc"/>
+
+    <!-- ===================== lane B: timed experiment ======================== -->
+    <text x="130" y="238" font-size="13.5" font-weight="600" fill="#3f4c4c">Timed experiment</text>
+    <text x="130" y="255" font-size="11.5" fill="#77827f">the sample waits in the sample changer between repeats while normal traffic carries on</text>
+
+    <rect x="130" y="294" width="750" height="38" rx="7" fill="#f6f9f9"/>
+
+    <!-- Hour gridlines, drawn over the pale tracks so the two lanes share one clock.
+         Interrupted between y222 and y262 so they do not run behind the lane B label. -->
+    <g stroke="#e4ecec" stroke-width="1">
+      <line x1="130" y1="150" x2="130" y2="222"/>
+      <line x1="280" y1="150" x2="280" y2="222"/>
+      <line x1="430" y1="150" x2="430" y2="222"/>
+      <line x1="580" y1="150" x2="580" y2="222"/>
+      <line x1="730" y1="150" x2="730" y2="222"/>
+      <line x1="880" y1="150" x2="880" y2="222"/>
+      <line x1="130" y1="262" x2="130" y2="404"/>
+      <line x1="280" y1="262" x2="280" y2="404"/>
+      <line x1="430" y1="262" x2="430" y2="404"/>
+      <line x1="580" y1="262" x2="580" y2="404"/>
+      <line x1="730" y1="262" x2="730" y2="404"/>
+      <line x1="880" y1="262" x2="880" y2="404"/>
+    </g>
+
+    <!-- lane A: other users' samples before the loop, then the loop repeats.
+         Blocks are inset 1px per side so neighbours read as separate runs. -->
+    <g fill="#d3dbdb">
+      <rect x="131" y="154" width="123" height="30" rx="5"/>
+      <rect x="256" y="154" width="98"  height="30" rx="5"/>
+    </g>
+    <g fill="#e46444">
+      <rect x="356" y="154" width="73" height="30" rx="5"/>
+      <rect x="506" y="154" width="73" height="30" rx="5"/>
+      <rect x="656" y="154" width="73" height="30" rx="5"/>
+      <rect x="806" y="154" width="73" height="30" rx="5"/>
+    </g>
+    <!-- the idle gaps inside the loop are what the figure is about -->
+    <g font-size="10" font-weight="700" fill="#e46444" text-anchor="middle">
+      <text x="467.5" y="173">occupied</text>
+      <text x="617.5" y="173">occupied</text>
+      <text x="767.5" y="173">occupied</text>
+    </g>
+
+    <!-- lane B callouts, above the blocks so nothing crosses the track -->
+    <circle cx="338" cy="278" r="6.5" fill="none" stroke="#587c58" stroke-width="2"/>
+    <path d="M338 274 V278.5 L341.5 280.5" fill="none" stroke="#587c58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="355" y="282" font-size="10.5" font-weight="700" fill="#587c58">first run 19:30</text>
+    <line x1="355" y1="286" x2="355" y2="294" stroke="#587c58" stroke-width="1.5"/>
+
+    <text x="880" y="282" text-anchor="end" font-size="10.5" font-weight="700" fill="#77827f">est. end 23:00</text>
+    <line x1="880" y1="286" x2="880" y2="294" stroke="#77827f" stroke-width="1.5"/>
+
+    <!-- lane B: the same repeats, with other users' samples filling every gap -->
+    <g fill="#d3dbdb">
+      <rect x="131" y="298" width="123" height="30" rx="5"/>
+      <rect x="256" y="298" width="98"  height="30" rx="5"/>
+      <rect x="431" y="298" width="73"  height="30" rx="5"/>
+      <rect x="581" y="298" width="73"  height="30" rx="5"/>
+      <rect x="731" y="298" width="73"  height="30" rx="5"/>
+    </g>
+    <g fill="#e46444">
+      <rect x="356" y="298" width="73" height="30" rx="5"/>
+      <rect x="506" y="298" width="73" height="30" rx="5"/>
+      <rect x="656" y="298" width="73" height="30" rx="5"/>
+      <rect x="806" y="298" width="73" height="30" rx="5"/>
+    </g>
+
+    <!-- repeat numbers, both lanes -->
+    <g font-size="12.5" font-weight="700" fill="#fdfefe" text-anchor="middle">
+      <text x="392" y="174">1</text>
+      <text x="542" y="174">2</text>
+      <text x="692" y="174">3</text>
+      <text x="842" y="174">4</text>
+      <text x="392" y="318">1</text>
+      <text x="542" y="318">2</text>
+      <text x="692" y="318">3</text>
+      <text x="842" y="318">4</text>
+    </g>
+
+    <!-- lag dimension: start to start, which is the sense NOMAD checks against the
+         longest experiment queued on that instrument before it lets you submit -->
+    <g stroke="#4db3e0" stroke-width="1.5">
+      <line x1="355" y1="356" x2="505" y2="356"/>
+      <line x1="355" y1="350" x2="355" y2="362"/>
+      <line x1="505" y1="350" x2="505" y2="362"/>
+    </g>
+    <text x="430" y="376" text-anchor="middle" font-size="10.5" font-weight="700" fill="#4db3e0">repeat lag 01:00</text>
+
+    <!-- ===================== shared clock axis ============================== -->
+    <line x1="130" y1="404" x2="880" y2="404" stroke="#c3cdcd" stroke-width="1.5"/>
+    <g stroke="#c3cdcd" stroke-width="1.5">
+      <line x1="130" y1="404" x2="130" y2="410"/>
+      <line x1="280" y1="404" x2="280" y2="410"/>
+      <line x1="430" y1="404" x2="430" y2="410"/>
+      <line x1="580" y1="404" x2="580" y2="410"/>
+      <line x1="730" y1="404" x2="730" y2="410"/>
+      <line x1="880" y1="404" x2="880" y2="410"/>
+    </g>
+    <g font-size="10.5" fill="#77827f" text-anchor="middle">
+      <text x="130" y="426">18:00</text>
+      <text x="280" y="426">19:00</text>
+      <text x="430" y="426">20:00</text>
+      <text x="580" y="426">21:00</text>
+      <text x="730" y="426">22:00</text>
+      <text x="880" y="426">23:00</text>
+    </g>
+
+  </g>
+
+  <!-- summary strip. SHARED is six letters, so the word and tick sit further in than
+       the eight-letter verdict this replaced. -->
+  <line x1="70" y1="482" x2="890" y2="482" stroke="#e6ebeb" stroke-width="1.5"/>
+  <text x="470" y="533" text-anchor="middle" font-size="34" font-weight="700" letter-spacing="17" fill="#587c58">SHARED</text>
+  <path d="M598 524 l7 8 l15 -18" fill="none" stroke="#587c58" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="480" y="562" text-anchor="middle" font-size="12.5" fill="#77827f">Reaction monitoring runs alongside normal traffic instead of taking the instrument out of service.</text>
+</svg>
