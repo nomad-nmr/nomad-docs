@@ -203,6 +203,7 @@ From version 3.6.0 onwards, any of the following variables can be added to overw
 - **JWT_EXPIRATION** : JWT expiration time in seconds, after this time users get automatically logged out, default value `3600`
 - **COLLECTION_DOWNLOAD_TIMEOUT** : time in minutes that collection download link is valid for, default value `30`
 - **PENDING_EMAIL_DELAY** : delay in minutes for sending pending status emails, default value `30`
+- **TIMEZONE** : time zone of the server set by [moment.timezone](https://momentjs.com/timezone/), default value `Europe/London`
 
 Following optional variables can be used to set up NOMAD to run in unusual environments and should be used with caution.
 

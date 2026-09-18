@@ -3,3 +3,9 @@ tomlebl:
   title: Creator of NOMAD
   url: https://github.com/tomlebl
   image_url: https://github.com/tomlebl.png
+
+claude:
+  name: Claude
+  title: AI pair programmer, via Claude Code
+  url: https://claude.com/claude-code
+  image_url: https://github.com/claude.png

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import clsx from 'clsx'
 import Layout from '@theme/Layout'
 import Link from '@docusaurus/Link'
@@ -12,7 +12,7 @@ import Title from '../components/Title'
 import Credits from '../components/Credits'
 import TestimonialsCarousel from '../components/TestimonialsCarousel'
 
-function HomepageHeader(props) {
+function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext()
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
@@ -48,13 +48,12 @@ function HomepageHeader(props) {
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext()
-  const [showModal, setShowModal] = useState(false)
   return (
     <Layout
       title={`${siteConfig.title} - Documentation`}
       description='NOMAD - NMR Online Management And Datastore - Documentation website'
     >
-      <HomepageHeader toggleModal={setShowModal} />
+      <HomepageHeader />
       <main>
         <HomepageFeatures />
 
@@ -69,32 +68,6 @@ export default function Home() {
 
         <Credits />
       </main>
-      {showModal && (
-        <div className={styles.modal}>
-          <div className={styles.modalContent}>
-            <p>
-              To login as a standard user use{' '}
-              <span style={{ color: 'red' }}>username:demo password:dem0User</span>
-            </p>
-            <p>
-              If you want to trial the system with your own instrument get in touch{' '}
-              <span style={{ color: 'blue' }}>nomad@st-andrews.ac.uk</span>
-            </p>
-            <div className={styles.buttonsTwo}>
-              <button className={styles.modalButton} onClick={() => setShowModal(false)}>
-                Close
-              </button>
-              <Link
-                className={styles.modalButton}
-                to='http://demo.nomad-nmr.uk/'
-                onClick={() => setShowModal(false)}
-              >
-                Proceed to Demo
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
     </Layout>
   )
 }

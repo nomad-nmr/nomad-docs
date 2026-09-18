@@ -20,7 +20,9 @@ The back-end code of the NOMAD system built using **[Express JS library](https:/
 
 The spectrometer client is a Javascript code that runs on spectrometer PC in **[Node.js](https://nodejs.org/en/)** runtime environment and enables communication of NOMAD back-end with Bruker IconNMR. It parses status and history HTML file(s) and outputs files in external setup folder to control automated run of the NMR spectrometer.
 
-![Technical Overview](./assets/technical_overview_schema.png)
+![NOMAD is a MERN-stack application in three parts: nomad-front-end, a React single page application running in the user's browser; the application server, where NGINX serves the compiled front end and reverse-proxies the nomad-rest-api Express service on Node.js, which reads and writes a MongoDB database; and nomad-spect-client, a Node.js client on the spectrometer PC that exchanges status HTML and setup files with IconNMR to control the spectrometer and upload the acquired data, with all three tiers communicating over HTTP/HTTPS](./assets/technical-overview.svg)
+
+More details about the overall architecture of NOMAD app can be found in **[SPEC.md](https://github.com/nomad-nmr/nomad-server/blob/main/SPEC.md)** file on GitHub.
 
 ## Set up for development
 
@@ -133,7 +135,7 @@ npm run coverage
 ## API Documentation
 
 Version 2 API endpoints have been documented using **[Swagger.io](https://swagger.io/)** .
-Documentation Swagger UI is accessible on any NOMAD server at the route `/api/api-docs`. You can check it on our **[NOMAD demo server](https://demo.nomad-nmr.uk/api/api-docs)**
+Documentation Swagger UI is accessible on any NOMAD server at the route `/api/api-docs`.
 
 Currently, only handful of endpoints, that could be used by a programmatic client to search and access archived data, has been refactored to version 2 and documented.
 Please get in touch if you want to add more or adjust the existing ones.

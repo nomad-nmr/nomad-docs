@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="566" viewBox="0 0 960 566" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <!--
+    Skeleton for a docs figure (docs/assets/*.svg), embedded in markdown as
+    ![long descriptive alt text](./assets/name.svg).
+
+    Copy this file, then fill in the three regions marked FILL IN below. The 960
+    viewBox is the house width; adjust only the height, and when you do, change the
+    card's height by the same amount so the 8px margin is preserved.
+
+    Motifs to drop into the body live in motifs.svg — check there before drawing
+    anything new. Copy the <defs> entries you actually use into this file's <defs>;
+    an SVG cannot reference another file's defs.
+  -->
+  <defs>
+    <!-- Arrowheads. markerUnits="userSpaceOnUse" holds the head at a fixed size
+         rather than scaling it with stroke-width. The tip lands 3px beyond the
+         path's end point, which every end-gap calculation has to allow for. -->
+    <marker id="ah-blue" viewBox="0 0 14 14" refX="11" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L14 7 L0 14 Z" fill="#4db3e0"/>
+    </marker>
+    <marker id="ah-green" viewBox="0 0 14 14" refX="11" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L14 7 L0 14 Z" fill="#587c58"/>
+    </marker>
+    <marker id="ah-red" viewBox="0 0 14 14" refX="11" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L14 7 L0 14 Z" fill="#e46444"/>
+    </marker>
+  </defs>
+
+  <!-- the figure card. height = svg height - 16 -->
+  <rect x="8" y="8" width="944" height="550" rx="18" fill="#fdfefe" stroke="#e6ebeb"/>
+
+  <!-- FILL IN: title, then one or two subtitle lines saying what the figure argues.
+       Keep the subtitle to two lines at most; drop the y83 line if one will do. -->
+  <text x="480" y="44" text-anchor="middle" font-size="22" font-weight="600" fill="#3f4c4c">Figure title</text>
+  <text x="480" y="66" text-anchor="middle" font-size="12.5" fill="#77827f">First subtitle line, setting up what the reader is looking at</text>
+  <text x="480" y="83" text-anchor="middle" font-size="12.5" fill="#77827f">second line, carrying the sentence on</text>
+
+  <!-- Everything below sits in this group. Nudging its translate is how you rebalance
+       the whole diagram vertically without touching a single inner coordinate — the
+       one habit that makes "a bit more room at the top" a one-number edit. -->
+  <g transform="translate(0 13)">
+
+    <!-- FILL IN: the diagram body, roughly y112 to y430.
+         Element labels: 13.5px/600/#3f4c4c for a name, 11.5px/#77827f beneath it for
+         a qualifier. Connector labels: 10.5px/700 in the connector's own colour. -->
+
+  </g>
+
+  <!-- FILL IN: the summary strip — the one-word verdict the figure is arguing for.
+       The divider is fixed; the word, glyph and caption move together, and should sit
+       centred in the band between the divider and the bottom of the card.
+       Use #tick (#587c58) for a positive verdict, #cross (#e46444) for a negative one;
+       the word's fill follows (#587c58 positive, #9aa6a6 negative). -->
+  <line x1="70" y1="452" x2="890" y2="452" stroke="#e6ebeb" stroke-width="1.5"/>
+  <text x="470" y="503" text-anchor="middle" font-size="34" font-weight="700" letter-spacing="17" fill="#587c58">FAIR</text>
+  <path d="M556 494 l7 8 l15 -18" fill="none" stroke="#587c58" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="480" y="532" text-anchor="middle" font-size="12.5" fill="#77827f">The caption that spells the verdict out</text>
+</svg>

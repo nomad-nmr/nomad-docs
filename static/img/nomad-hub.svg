@@ -1,0 +1,82 @@
+<svg id="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="400" viewBox="0 0 400 400">
+  <g id="svgg">
+    <!-- ground shelf -->
+    <rect x="20" y="366" width="360" height="7" rx="3.5" fill="#d3dbdb"/>
+    <g transform="translate(0 -8)">
+
+    <!-- publish flow: local servers push data up into the shared hub -->
+    <g fill="#587c58">
+      <g transform="translate(155 164) rotate(23.5)">
+        <path d="M0 -6 L-9 12 L9 12 Z"/>
+        <line x1="0" y1="7" x2="0" y2="126" stroke="#587c58" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.5 10"/>
+      </g>
+      <g transform="translate(200 164)">
+        <path d="M0 -6 L-9 12 L9 12 Z"/>
+        <line x1="0" y1="7" x2="0" y2="116" stroke="#587c58" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.5 10"/>
+      </g>
+      <g transform="translate(245 164) rotate(-23.5)">
+        <path d="M0 -6 L-9 12 L9 12 Z"/>
+        <line x1="0" y1="7" x2="0" y2="126" stroke="#587c58" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.5 10"/>
+      </g>
+    </g>
+
+    <!-- the NOMAD-NMR Hub: a shared, hosted repository -->
+    <g fill="#d3dbdb">
+      <circle cx="200" cy="92" r="54"/>
+      <circle cx="136" cy="114" r="34"/>
+      <circle cx="264" cy="110" r="38"/>
+      <circle cx="168" cy="130" r="24"/>
+      <rect x="102" y="94" width="196" height="54" rx="27"/>
+    </g>
+    <!-- platform edge -->
+    <rect x="112" y="143" width="176" height="9" rx="4.5" fill="#4db3e0"/>
+
+    <!-- stored alongside the metadata: molecular structures (1,3-dimethylbenzene) ... -->
+    <ellipse cx="172" cy="129" rx="9" ry="6.5" fill="#e5d83e"/>
+    <g fill="none" stroke="#4db3e0" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M172 85 L191.05 96 L191.05 118 L172 129 L152.95 118 L152.95 96 Z" stroke-width="3"/>
+      <path d="M152.95 96 L144.29 91 M191.05 96 L199.71 91" stroke-width="3"/>
+      <path d="M159.5 98.6 L170.9 92 M185.6 100.4 L185.6 113.6 M170.9 122 L159.5 115.4" stroke-width="2.2"/>
+    </g>
+
+    <!-- ... and the spectra themselves: an NMR triplet -->
+    <path d="M204 134 L208 134 L210 118 L212 134 L224 134 L226 100 L228 134 L240 134 L242 118 L244 134 L248 134" fill="none" stroke="#e46444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- REST API port: programmatic access for scripts and AI agents -->
+    <rect x="252" y="132" width="54" height="30" rx="8" fill="#e46444"/>
+    <g fill="none" stroke="#d3dbdb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M270 139 L263 147 L270 155"/>
+      <path d="M279 137 L273 157"/>
+      <path d="M288 139 L295 147 L288 155"/>
+    </g>
+
+    <!-- local NOMAD servers -->
+    <g id="nomad-servers">
+      <g transform="translate(64 288)">
+        <rect x="0" y="0" width="62" height="64" rx="7" fill="#4db3e0"/>
+        <rect x="7" y="7" width="48" height="50" rx="4" fill="#d3dbdb"/>
+        <rect x="13" y="15" width="36" height="5" rx="2.5" fill="#e46444"/>
+        <rect x="13" y="26" width="36" height="5" rx="2.5" fill="#e46444"/>
+        <circle cx="18" cy="45" r="4" fill="#587c58"/>
+        <rect x="28" y="41" width="21" height="8" rx="2.5" fill="#4db3e0"/>
+      </g>
+      <g transform="translate(169 288)">
+        <rect x="0" y="0" width="62" height="64" rx="7" fill="#4db3e0"/>
+        <rect x="7" y="7" width="48" height="50" rx="4" fill="#d3dbdb"/>
+        <rect x="13" y="15" width="36" height="5" rx="2.5" fill="#e46444"/>
+        <rect x="13" y="26" width="36" height="5" rx="2.5" fill="#e46444"/>
+        <circle cx="18" cy="45" r="4" fill="#587c58"/>
+        <rect x="28" y="41" width="21" height="8" rx="2.5" fill="#4db3e0"/>
+      </g>
+      <g transform="translate(274 288)">
+        <rect x="0" y="0" width="62" height="64" rx="7" fill="#4db3e0"/>
+        <rect x="7" y="7" width="48" height="50" rx="4" fill="#d3dbdb"/>
+        <rect x="13" y="15" width="36" height="5" rx="2.5" fill="#e46444"/>
+        <rect x="13" y="26" width="36" height="5" rx="2.5" fill="#e46444"/>
+        <circle cx="18" cy="45" r="4" fill="#587c58"/>
+        <rect x="28" y="41" width="21" height="8" rx="2.5" fill="#4db3e0"/>
+      </g>
+    </g>
+  </g>
+  </g>
+</svg>

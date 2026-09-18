@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="570" viewBox="0 0 960 570" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <defs>
+    <!-- Arrowheads. markerUnits="userSpaceOnUse" holds the head at a fixed size; the
+         tip lands 3px beyond the path's end point. The *-start pair is mirrored and
+         uses refX="3" so its tip lands 3px before the path's start point. -->
+    <marker id="ah-blue" viewBox="0 0 14 14" refX="11" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L14 7 L0 14 Z" fill="#4db3e0"/>
+    </marker>
+    <marker id="ah-blue-start" viewBox="0 0 14 14" refX="3" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M14 0 L0 7 L14 14 Z" fill="#4db3e0"/>
+    </marker>
+    <marker id="ah-green" viewBox="0 0 14 14" refX="11" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M0 0 L14 7 L0 14 Z" fill="#587c58"/>
+    </marker>
+    <marker id="ah-green-start" viewBox="0 0 14 14" refX="3" refY="7" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M14 0 L0 7 L14 14 Z" fill="#587c58"/>
+    </marker>
+
+    <!-- NMR spectrometer: superconducting cryostat on its stand, from motifs.svg.
+         Origin: bore axis, level with the lower barrel. Extent 66x119. -->
+    <linearGradient id="mag-body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c7d2d6"/>
+      <stop offset="0.16" stop-color="#f2f7f8"/>
+      <stop offset="0.44" stop-color="#ffffff"/>
+      <stop offset="0.76" stop-color="#e6edee"/>
+      <stop offset="1" stop-color="#bfc9ce"/>
+    </linearGradient>
+    <linearGradient id="mag-shroud" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3b4751"/>
+      <stop offset="0.35" stop-color="#5c6a75"/>
+      <stop offset="1" stop-color="#333d46"/>
+    </linearGradient>
+    <linearGradient id="mag-leg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#57646e"/>
+      <stop offset="0.35" stop-color="#7d8b95"/>
+      <stop offset="1" stop-color="#49555e"/>
+    </linearGradient>
+    <linearGradient id="mag-tube" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ccd6d9"/>
+      <stop offset="0.35" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#c3ced2"/>
+    </linearGradient>
+    <g id="magnet">
+      <!-- anti-vibration feet -->
+      <g fill="#8e9aa1">
+        <rect x="-27.5" y="53" width="15" height="5" rx="2.5"/>
+        <rect x="-7.5" y="53" width="15" height="5" rx="2.5"/>
+        <rect x="12.5" y="53" width="15" height="5" rx="2.5"/>
+      </g>
+      <!-- support legs -->
+      <rect x="-25.5" y="32" width="11" height="22" rx="2" fill="url(#mag-leg)"/>
+      <rect x="-5.5" y="32" width="11" height="22" rx="2" fill="url(#mag-leg)"/>
+      <rect x="14.5" y="32" width="11" height="22" rx="2" fill="url(#mag-leg)"/>
+      <!-- base plate -->
+      <rect x="-31" y="27" width="62" height="6" rx="1.5" fill="#edf2f3" stroke="#ccd6d9" stroke-width="0.8"/>
+      <!-- superconducting cryostat barrel -->
+      <rect x="-24" y="-31" width="48" height="59" rx="8" fill="url(#mag-body)" stroke="#c9d3d6" stroke-width="0.8"/>
+      <ellipse cx="0" cy="-31" rx="24" ry="6.5" fill="#e8eef0" stroke="#c9d3d6" stroke-width="0.8"/>
+      <!-- dark shim / electronics shrouds -->
+      <rect x="-31.5" y="-8" width="9" height="38" rx="4.5" fill="url(#mag-shroud)"/>
+      <rect x="22.5" y="-8" width="9" height="38" rx="4.5" fill="url(#mag-shroud)"/>
+      <!-- front panel and status mark -->
+      <rect x="-8" y="6" width="16" height="15" rx="1.5" fill="#e2e9eb"/>
+      <rect x="-1.8" y="-3" width="3.6" height="3.6" rx="0.6" fill="#e46444"/>
+      <!-- top flange ring -->
+      <ellipse cx="0" cy="-33.5" rx="22" ry="5.4" fill="none" stroke="#86b361" stroke-width="1.7"/>
+      <!-- helium / nitrogen vent towers -->
+      <rect x="-15" y="-52" width="7" height="21" rx="2" fill="url(#mag-tube)" stroke="#c3ced2" stroke-width="0.7"/>
+      <rect x="-15" y="-52" width="7" height="9" rx="2" fill="#3b4751"/>
+      <rect x="8" y="-52" width="7" height="21" rx="2" fill="url(#mag-tube)" stroke="#c3ced2" stroke-width="0.7"/>
+      <rect x="8" y="-52" width="7" height="9" rx="2" fill="#3b4751"/>
+      <!-- sample bore / lift -->
+      <rect x="-2.5" y="-46" width="5" height="15" rx="1.5" fill="#b7c2c2"/>
+      <circle cx="0" cy="-47" r="2.3" fill="#8e9aa1"/>
+      <!-- cross rail linking the tower heads -->
+      <rect x="-15.5" y="-57.5" width="31" height="3" rx="1.5" fill="#c3ccd0"/>
+      <circle cx="-11.5" cy="-58.5" r="2.4" fill="#3b4751"/>
+      <circle cx="11.5" cy="-58.5" r="2.4" fill="#3b4751"/>
+    </g>
+
+    <!-- Local server, from motifs.svg. Origin: top-left. Extent 62x64. -->
+    <g id="rack">
+      <rect x="0" y="0" width="62" height="64" rx="7" fill="#4db3e0"/>
+      <rect x="7" y="7" width="48" height="50" rx="4" fill="#d3dbdb"/>
+      <rect x="13" y="15" width="36" height="5" rx="2.5" fill="#e46444"/>
+      <rect x="13" y="26" width="36" height="5" rx="2.5" fill="#e46444"/>
+      <circle cx="18" cy="45" r="4" fill="#587c58"/>
+      <rect x="28" y="41" width="21" height="8" rx="2.5" fill="#4db3e0"/>
+    </g>
+
+    <!-- REST API plug, from motifs.svg. Origin: top-left. Extent 40x60. -->
+    <g id="api-port">
+      <rect x="0" y="0" width="40" height="60" rx="8" fill="#e46444"/>
+      <g fill="none" stroke="#fdfefe" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 14 l-7 7 l7 7"/>
+        <path d="M26 14 l7 7 l-7 7"/>
+      </g>
+      <text x="20" y="54" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fdfefe">API</text>
+    </g>
+  </defs>
+
+  <rect x="8" y="8" width="944" height="554" rx="18" fill="#fdfefe" stroke="#e6ebeb"/>
+
+  <text x="480" y="44" text-anchor="middle" font-size="22" font-weight="600" fill="#3f4c4c">NOMAD system architecture</text>
+  <text x="480" y="66" text-anchor="middle" font-size="12.5" fill="#77827f">A Javascript MERN-stack app in three parts &#8212; the browser front end, the application server and the spectrometer client</text>
+  <text x="480" y="83" text-anchor="middle" font-size="12.5" fill="#77827f">talking over HTTP/HTTPS, with IconNMR driven through files written on the spectrometer PC</text>
+
+  <g transform="translate(0 0)">
+
+  <!-- ===================== user PC ===================== -->
+  <rect x="30" y="112" width="232" height="238" rx="16" fill="#eef5f5" stroke="#4db3e0" stroke-width="2"/>
+  <path d="M30 128 a16 16 0 0 1 16 -16 h200 a16 16 0 0 1 16 16 v14 h-232 z" fill="#4db3e0"/>
+  <text x="146" y="131" text-anchor="middle" font-size="12.5" font-weight="600" fill="#fdfefe">User PC (client)</text>
+
+  <!-- browser window running the single page application -->
+  <rect x="62" y="168" width="168" height="128" rx="8" fill="#4db3e0"/>
+  <circle cx="72" cy="178" r="2.6" fill="#e2e8e8"/><circle cx="80" cy="178" r="2.6" fill="#e2e8e8"/><circle cx="88" cy="178" r="2.6" fill="#e2e8e8"/>
+  <rect x="96" y="175" width="126" height="7" rx="3.5" fill="#9fc4d8"/>
+  <rect x="70" y="188" width="152" height="100" rx="3" fill="#e2e8e8"/>
+  <rect x="76" y="194" width="140" height="12" rx="3" fill="#4db3e0"/>
+  <circle cx="86" cy="218" r="3.2" fill="#587c58"/><rect x="96" y="215" width="112" height="6" rx="3" fill="#9fc4d8"/>
+  <circle cx="86" cy="234" r="3.2" fill="#587c58"/><rect x="96" y="231" width="94" height="6" rx="3" fill="#9fc4d8"/>
+  <circle cx="86" cy="250" r="3.2" fill="#e5d83e"/><rect x="96" y="247" width="104" height="6" rx="3" fill="#9fc4d8"/>
+  <circle cx="86" cy="266" r="3.2" fill="#e46444"/><rect x="96" y="263" width="84" height="6" rx="3" fill="#e0a08c"/>
+  <text x="146" y="318" text-anchor="middle" font-size="13.5" font-weight="600" fill="#3f4c4c">nomad-front-end</text>
+  <text x="146" y="334" text-anchor="middle" font-size="11.5" fill="#77827f">React SPA &#183; runs in the browser</text>
+
+  <!-- ===================== application server ===================== -->
+  <rect x="340" y="112" width="300" height="238" rx="16" fill="#eef5f5" stroke="#4db3e0" stroke-width="2"/>
+  <path d="M340 128 a16 16 0 0 1 16 -16 h268 a16 16 0 0 1 16 16 v14 h-300 z" fill="#4db3e0"/>
+  <text x="490" y="131" text-anchor="middle" font-size="12.5" font-weight="600" fill="#fdfefe">Application server</text>
+
+  <!-- NGINX: serves the production build and reverse-proxies the API -->
+  <rect x="356" y="160" width="268" height="30" rx="8" fill="#587c58"/>
+  <text x="490" y="180" text-anchor="middle" font-size="11" font-weight="600" fill="#fdfefe">NGINX &#183; static content &amp; reverse proxy</text>
+
+  <rect x="356" y="204" width="126" height="96" rx="10" fill="#ffffff" stroke="#d7dede"/>
+  <rect x="498" y="204" width="126" height="96" rx="10" fill="#ffffff" stroke="#d7dede"/>
+
+  <!-- compiled front-end bundle served as static content -->
+  <rect x="384" y="216" width="70" height="48" rx="5" fill="#4db3e0"/>
+  <circle cx="392" cy="222" r="2" fill="#e2e8e8"/><circle cx="398" cy="222" r="2" fill="#e2e8e8"/><circle cx="404" cy="222" r="2" fill="#e2e8e8"/>
+  <rect x="389" y="228" width="60" height="31" rx="2" fill="#e2e8e8"/>
+  <rect x="394" y="233" width="50" height="4" rx="2" fill="#9fc4d8"/>
+  <rect x="394" y="241" width="38" height="4" rx="2" fill="#9fc4d8"/>
+  <rect x="394" y="249" width="44" height="4" rx="2" fill="#9fc4d8"/>
+  <text x="419" y="286" text-anchor="middle" font-size="10.5" font-weight="600" fill="#3f4c4c">nomad-front-end</text>
+  <text x="419" y="322" text-anchor="middle" font-size="10" fill="#77827f">production build</text>
+
+  <!-- Express REST API on Node.js, with the API plug on its flank -->
+  <use href="#rack" transform="translate(526 220) scale(0.62)"/>
+  <use href="#api-port" transform="translate(564 216) scale(0.85)"/>
+  <text x="561" y="286" text-anchor="middle" font-size="10.5" font-weight="600" fill="#3f4c4c">nomad-rest-api</text>
+  <text x="561" y="322" text-anchor="middle" font-size="10" fill="#77827f">Express &#183; Node.js</text>
+
+  <!-- ===================== spectrometer PC ===================== -->
+  <rect x="720" y="112" width="210" height="238" rx="16" fill="#eef5f5" stroke="#4db3e0" stroke-width="2"/>
+  <path d="M720 128 a16 16 0 0 1 16 -16 h178 a16 16 0 0 1 16 16 v14 h-210 z" fill="#4db3e0"/>
+  <text x="828" y="131" text-anchor="middle" font-size="12.5" font-weight="600" fill="#fdfefe">Spectrometer PC</text>
+
+  <rect x="736" y="158" width="178" height="82" rx="10" fill="#ffffff" stroke="#d7dede"/>
+  <rect x="790" y="168" width="70" height="42" rx="5" fill="#4db3e0"/>
+  <rect x="795" y="174" width="60" height="30" rx="2" fill="#e2e8e8"/>
+  <path d="M800 181 l5 4 l-5 4" fill="none" stroke="#587c58" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="810" y="182" width="38" height="4" rx="2" fill="#9fc4d8"/>
+  <rect x="800" y="191" width="48" height="4" rx="2" fill="#9fc4d8"/>
+  <rect x="800" y="199" width="32" height="4" rx="2" fill="#e0a08c"/>
+  <text x="825" y="224" text-anchor="middle" font-size="10.5" font-weight="600" fill="#3f4c4c">nomad-spect-client</text>
+  <text x="825" y="236" text-anchor="middle" font-size="10" fill="#77827f">Node.js runtime</text>
+
+  <!-- the client reads IconNMR's status and history HTML and writes setup files -->
+  <path d="M825 256 V281" fill="none" stroke="#587c58" stroke-width="3.5" marker-start="url(#ah-green-start)" marker-end="url(#ah-green)"/>
+  <text x="838" y="264" font-size="10" font-weight="700" fill="#587c58">status HTML</text>
+  <text x="838" y="276" font-size="10" fill="#587c58">setup files</text>
+
+  <rect x="736" y="300" width="178" height="38" rx="10" fill="#ffffff" stroke="#d7dede"/>
+  <rect x="756" y="308" width="26" height="22" rx="3" fill="#4db3e0"/>
+  <rect x="759" y="314" width="20" height="13" rx="1.5" fill="#e2e8e8"/>
+  <rect x="761" y="316" width="14" height="3" rx="1.5" fill="#587c58"/>
+  <rect x="761" y="321" width="10" height="3" rx="1.5" fill="#e5d83e"/>
+  <text x="792" y="317" font-size="10.5" font-weight="600" fill="#3f4c4c">IconNMR</text>
+  <text x="792" y="330" font-size="10" fill="#77827f">automation queue</text>
+
+  <!-- ===================== transport between the tiers ===================== -->
+  <path d="M281 230 H321" fill="none" stroke="#4db3e0" stroke-width="3.5" marker-start="url(#ah-blue-start)" marker-end="url(#ah-blue)"/>
+  <text x="301" y="218" text-anchor="middle" font-size="10.5" font-weight="700" fill="#4db3e0">HTTPS</text>
+  <text x="301" y="252" text-anchor="middle" font-size="10" fill="#4db3e0">app + REST</text>
+
+  <path d="M659 230 H701" fill="none" stroke="#4db3e0" stroke-width="3.5" marker-start="url(#ah-blue-start)" marker-end="url(#ah-blue)"/>
+  <text x="680" y="218" text-anchor="middle" font-size="10.5" font-weight="700" fill="#4db3e0">HTTPS</text>
+  <text x="680" y="252" text-anchor="middle" font-size="10" fill="#4db3e0">status + jobs</text>
+
+  <!-- ===================== database ===================== -->
+  <path d="M490 366 V405" fill="none" stroke="#4db3e0" stroke-width="3.5" marker-start="url(#ah-blue-start)" marker-end="url(#ah-blue)"/>
+  <text x="504" y="392" font-size="10.5" font-weight="700" fill="#4db3e0">reads &amp; writes</text>
+
+  <g transform="translate(490 434)">
+    <path d="M-30 0 v54 a30 10 0 0 0 60 0 v-54 z" fill="#4db3e0"/>
+    <ellipse cx="0" cy="0" rx="30" ry="10" fill="#d3dbdb"/>
+    <path d="M-30 26 a30 10 0 0 0 60 0" fill="none" stroke="#e2e8e8" stroke-width="3"/>
+    <path d="M-30 44 a30 10 0 0 0 60 0" fill="none" stroke="#e2e8e8" stroke-width="3"/>
+  </g>
+  <text x="490" y="520" text-anchor="middle" font-size="13.5" font-weight="600" fill="#3f4c4c">MongoDB</text>
+  <text x="490" y="536" text-anchor="middle" font-size="11.5" fill="#77827f">application database</text>
+
+  <!-- ===================== the instrument ===================== -->
+  <path d="M805 366 V403" fill="none" stroke="#587c58" stroke-width="3.5" marker-end="url(#ah-green)"/>
+  <text x="795" y="384" text-anchor="end" font-size="10.5" font-weight="700" fill="#587c58">controls the run</text>
+  <text x="795" y="396" text-anchor="end" font-size="10" fill="#587c58">IconNMR queue</text>
+
+  <path d="M845 406 V366" fill="none" stroke="#4db3e0" stroke-width="3.5" marker-end="url(#ah-blue)"/>
+  <text x="855" y="384" font-size="10.5" font-weight="700" fill="#4db3e0">raw data</text>
+  <text x="855" y="396" font-size="10" fill="#4db3e0">auto-upload</text>
+
+  <use href="#magnet" transform="translate(825 458) scale(0.85)"/>
+  <text x="825" y="528" text-anchor="middle" font-size="12" fill="#77827f">NMR spectrometer</text>
+  </g>
+</svg>

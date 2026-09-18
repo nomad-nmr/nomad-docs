@@ -14,7 +14,7 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'nomad-nmr', // Usually your GitHub org/user name.
-  projectName: 'website', // Usually your repo name.
+  projectName: 'nomad-docs', // Usually your repo name.
 
   presets: [
     [
@@ -23,13 +23,13 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/'
+          // Both plugins append their own content folder ('docs/', 'blog/') to this
+          // base, so it points at the repo root rather than at docs/ or blog/.
+          editUrl: 'https://github.com/nomad-nmr/nomad-docs/edit/main/'
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/blog/'
+          editUrl: 'https://github.com/nomad-nmr/nomad-docs/edit/main/'
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css')

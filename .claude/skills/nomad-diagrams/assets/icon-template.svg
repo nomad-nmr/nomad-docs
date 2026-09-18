@@ -1,0 +1,33 @@
+<svg id="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="400" viewBox="0 0 400 400">
+  <!--
+    Skeleton for a landing-page feature icon (static/img/*.svg).
+
+    These are pulled into the homepage by HomepageFeatures.js via
+    require('../../static/img/name.svg').default, so SVGR turns the file into an
+    inline React component and puts a className on this root element. Keep the
+    root attributes as they are — the shipped icons all carry this exact preamble,
+    including the id="svg" / id="svgg" pair.
+
+    Icons are drawn without text: the feature title and bullets are rendered by the
+    page around them.
+
+    Motifs live in motifs.svg — copy the markup in rather than <use>-ing across
+    files, and scale it to suit the 400×400 canvas (icon strokes run heavier than
+    figure strokes, typically 3 rather than 2.2).
+  -->
+  <g id="svgg">
+    <!-- The ground shelf every icon in the set stands on. Do not move it: it is what
+         makes five separately drawn icons read as one family across the page. -->
+    <rect x="20" y="366" width="360" height="7" rx="3.5" fill="#d3dbdb"/>
+
+    <!-- Everything else sits in this group. Its translate is the vertical balance
+         knob for the whole icon — the shipped icons use values between -8 and -14 to
+         settle the subject above the shelf. -->
+    <g transform="translate(0 -8)">
+
+      <!-- FILL IN: the subject. Aim to fill roughly x 40..360, y 50..355, leaving the
+           shelf visible beneath it. -->
+
+    </g>
+  </g>
+</svg>

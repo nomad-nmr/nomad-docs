@@ -62,18 +62,23 @@ const FeatureList = [
     )
   },
   {
-    title: 'Decentralised Data Repository',
-    Svg: require('../../static/img/distributed.svg').default,
+    title: 'NOMAD-NMR Hub',
+    Svg: require('../../static/img/nomad-hub.svg').default,
     description: (
       <ul className={styles.featureList}>
         <li className={styles.featurePlanned}>
-          Repository created and maintained by community of NOMAD users
+          Usage statistics collected from all NOMAD-NMR servers
         </li>
         <li className={styles.featurePlanned}>
-          Local NMR data management systems can share resources to create P2P network of nodes
+          REST API for programmatic access to archived data and metadata, usable by scripts and AI
+          agents
         </li>
         <li className={styles.featurePlanned}>
-          Preserving, sharing and publishing data without a server controled by central authority
+          Publish data straight from your NOMAD server to the NOMAD-NMR Hub, a shared repository
+          built with{' '}
+          <a href='https://www.psdi.ac.uk/' target='_blank'>
+            PSDI
+          </a>
         </li>
       </ul>
     )
