@@ -137,5 +137,23 @@ npm run coverage
 Version 2 API endpoints have been documented using **[Swagger.io](https://swagger.io/)** .
 Documentation Swagger UI is accessible on any NOMAD server at the route `/api/api-docs`.
 
-Currently, only handful of endpoints, that could be used by a programmatic client to search and access archived data, has been refactored to version 2 and documented.
-Please get in touch if you want to add more or adjust the existing ones.
+Currently, only a handful of endpoints have been documented. They cover authentication, user and group management, and access to automatic experiment data. Please get in touch if you want to add more or adjust the existing ones.
+
+All endpoints except login require a JSON Web Token (JWT) in the `Authorization` header (`Bearer` scheme). The Swagger UI lets you authorise once using the **Authorize** button and then try the endpoints directly from the browser.
+
+| Area | Method and route | Purpose |
+| --- | --- | --- |
+| Authentication | `POST /api/auth/login` | Log in and obtain an access token |
+| User management | `GET /api/admin/users` | Retrieve users with paging and filters; set `list=true` for a compact list |
+| User management | `POST /api/admin/users` | Create a new user |
+| User management | `PUT /api/admin/users` | Update an existing user |
+| User management | `PATCH /api/admin/users/toggle-active/{id}` | Toggle the active status of a user |
+| User management | `POST /api/admin/users/delete-users` | Delete users without experiments; users with experiments are marked inactive instead |
+| Group management | `GET /api/admin/groups` | Retrieve groups; set `list=true` for a compact list |
+| Group management | `POST /api/admin/groups` | Add a new group |
+| Auto experiments | `GET /api/v2/auto-experiments` | Get a list of automatic experiments |
+| Auto experiments | `POST /api/v2/auto-experiments/download` | Download a zip file of raw automatic experiment data |
+
+:::note
+The user and group management endpoints are restricted to users with the admin access level.
+:::
