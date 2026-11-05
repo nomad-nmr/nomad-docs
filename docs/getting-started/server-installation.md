@@ -34,10 +34,9 @@ nano /nomad/docker-compose.yaml
 ```
 
 ```yaml title=/nomad/docker-compose.yaml
-version: '3.8'
 services:
   mongodb:
-    image: 'mongo'
+    image: mongo:8.0
     restart: always
     volumes:
       - mongo-data:/data/db
@@ -86,6 +85,20 @@ server:
 ```
 
 Docker images are stored on **[Docker Hub](https://hub.docker.com/search?q=nomadnmr)** where you can check available tags.
+
+### MongoDB version {#mongodb-version}
+
+The example configuration pins MongoDB to the `8.0` release series, which is a MongoDB major release with long-term support. The `mongo:8.0` tag still picks up 8.0.x patch releases with bug and security fixes, but it never moves to a newer MongoDB version.
+
+:::warning
+Always use an explicit MongoDB version tag (e.g. `mongo:8.0`), never `mongo` or `mongo:latest`. With an unpinned image, `docker compose pull` can silently install a newer MongoDB that upgrades the database files (the _featureCompatibilityVersion_). After that, older MongoDB versions refuse to start on the data and the mongodb container keeps restarting with an error like:
+
+```
+Wrong mongod version ... Invalid featureCompatibilityVersion document ... version: "8.2"
+```
+
+If you see this error, **do not delete the mongo-data volume**: your data is intact. Set the image tag to the version shown in the error message (`version: "8.2"` → `image: mongo:8.2`) and start the server again. To move to a different MongoDB version afterwards, follow **[Updating MongoDB](#updating-mongodb)**.
+:::
 
 ### Datastore folder configuration
 
@@ -253,10 +266,39 @@ You should see three running containers with following names **nomad-mongodb-1**
 
 ```bash
 sudo docker compose down
-sudo docker rmi nomadnmr/server-tls:production nomadnmr/api:production
+sudo docker rmi nomadnmr/server:production nomadnmr/api:production
 sudo docker compose pull
 sudo docker compose up -d
 ```
+
+If your server is TLS enabled, replace `nomadnmr/server:production` with `nomadnmr/server-tls:production` in the `docker rmi` command.
+
+### Updating MongoDB {#updating-mongodb}
+
+MongoDB is updated independently of NOMAD by changing the tag of the mongodb image in docker-compose.yaml file. Before you start, check which MongoDB version your server runs and the feature compatibility version (FCV) of the database.
+
+```bash
+sudo docker exec nomad-mongodb-1 mongosh --quiet --eval 'db.version() + " / FCV " + db.adminCommand({getParameter: 1, featureCompatibilityVersion: 1}).featureCompatibilityVersion.version'
+```
+
+1. **[Dump the database](#database-dumps)** and keep the dump somewhere safe.
+2. Change the mongodb image tag in docker-compose.yaml file to the next major release. Upgrade **one major version at a time** (e.g. `mongo:7.0` → `mongo:8.0`), never skip a version.
+3. Pull the new image and start the server.
+
+   ```bash
+   sudo docker compose pull mongodb
+   sudo docker compose up -d
+   ```
+
+4. Check that NOMAD works as expected and then finalise the upgrade by raising the FCV to the new version.
+
+   ```bash
+   sudo docker exec -it nomad-mongodb-1 mongosh --eval 'db.adminCommand({ setFeatureCompatibilityVersion: "8.0", confirm: true })'
+   ```
+
+:::tip
+Until the FCV has been raised in step 4 you can return to the previous MongoDB version simply by changing the image tag back. After step 4, going back requires lowering the FCV first. See the **[MongoDB upgrade documentation](https://www.mongodb.com/docs/manual/release-notes/)** for details.
+:::
 
 ## Database dumps
 
