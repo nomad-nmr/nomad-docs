@@ -38,6 +38,21 @@ const config = {
     ]
   ],
 
+  plugins: [
+    [
+      // Second docs instance: serves the governance/ folder at /governance
+      '@docusaurus/plugin-content-docs',
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      ({
+        id: 'governance',
+        path: 'governance',
+        routeBasePath: 'governance',
+        sidebarPath: require.resolve('./sidebarsGovernance.js'),
+        editUrl: 'https://github.com/nomad-nmr/nomad-docs/edit/main/'
+      })
+    ]
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -55,6 +70,13 @@ const config = {
             label: 'Docs'
           },
           { to: '/blog', label: 'Blog', position: 'left' },
+          {
+            type: 'doc',
+            docsPluginId: 'governance',
+            docId: 'index',
+            position: 'left',
+            label: 'Governance'
+          },
           {
             href: 'https://github.com/nomad-nmr',
             label: 'GitHub',
