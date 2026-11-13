@@ -8,6 +8,10 @@ sidebar_position: 2
 
 This page shows where NOMAD is heading and what we are working on. It is organised as **Now**, **Next** and **Later**, with no fixed dates: NOMAD is developed by a very small team, so we keep the "Now" list short and would rather say what comes first than promise when.
 
+:::tip Follow progress
+Every item on this roadmap has an issue on GitHub, and you can follow day-to-day development on the **[NOMAD project board](https://github.com/orgs/nomad-nmr/projects/1)**. The "Features - Todo" column shows the roadmap items with their **Now**, **Next** and **Later** priority. You don't need a GitHub account to view it.
+:::
+
 :::note
 This roadmap was discussed at the founding steering committee meeting on 28 October 2026 (see the **[meeting summary](./meetings/founding-meeting-2026-10-28.md)**) and updated with requests from the labs. The order of items may still change.
 :::
